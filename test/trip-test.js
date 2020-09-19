@@ -7,12 +7,16 @@ import tripsData from './datasets/trips-data.js';
 import Trip from '../src/trip.js';
 
 describe('Trip', function() {
-  let trip;
+  let pastTrip;
+  let presentTrip;
+  let futureTrip;
   let traveler;
   let destination;
 
   beforeEach(function() {
-    trip = new Trip(tripsData.trips[0])
+    pastTrip = new Trip(tripsData.trips[0])
+    futureTrip = new Trip(tripsData.trips[1])
+    presentTrip = new Trip(tripsData.trips[2])
   });
   describe('functionality and properties', () => {
     it('should be a function', () => {
@@ -28,5 +32,16 @@ describe('Trip', function() {
       expect(trip.status).to.equal("approved")
       expect(trip.suggestedActivities).to.deep.equal([])
     });
+  })
+  describe('determineTripStatus', () => {
+    it('should determine if a trip is past', () => {
+      expect(pastTrip.determineTripStatus()).to.equal('past')
+    })
+    it('should determine if a trip is present', () => {
+      expect(presentTrip.determineTripStatus()).to.equal('present')
+    })
+    it('should determine if a trip is upcoming', () => {
+      expect(futureTrip.determineTripStatus()).to.equal('upcoming')
+    })
   })
 });

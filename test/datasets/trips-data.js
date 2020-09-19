@@ -25,7 +25,7 @@ let tripsData = {
       "userID": 1,
       "destinationID": 3,
       "travelers": 4,
-      "date": "2020/05/22",
+      "date": "2020/09/19",
       "duration": 17,
       "status": "approved",
       "suggestedActivities": []
