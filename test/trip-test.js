@@ -18,5 +18,15 @@ describe('Trip', function() {
     it('should be a function', () => {
       expect(Trip).to.be.a('function');
     });
+    it('should contain all properties within the initial trip data', () => {
+      expect(trip.id).to.equal(1)
+      expect(trip.travelerId).to.equal(1)
+      expect(trip.destinationId).to.equal(1)
+      expect(trip.totalTravelers).to.equal(1)
+      expect(trip.departDate).to.equal("2019/09/16")
+      expect(trip.duration).to.equal(8)
+      expect(trip.status).to.equal("approved")
+      expect(trip.suggestedActivities).to.equal([])
+    })
   })
 });

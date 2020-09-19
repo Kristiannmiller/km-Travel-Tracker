@@ -2,7 +2,7 @@ let tripsData = {
   "trips": [
     {
       "id": 1,
-      "userID": 44,
+      "userID": 1,
       "destinationID": 1,
       "travelers": 1,
       "date": "2019/09/16",
