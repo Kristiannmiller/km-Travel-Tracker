@@ -17,6 +17,7 @@ describe('Trip', function() {
     pastTrip = new Trip(tripsData.trips[0])
     futureTrip = new Trip(tripsData.trips[1])
     presentTrip = new Trip(tripsData.trips[2])
+    pendingTrip = new Trip(tripsData.trips[3])
   });
   describe('functionality and properties', () => {
     it('should be a function', () => {
@@ -42,6 +43,9 @@ describe('Trip', function() {
     })
     it('should determine if a trip is upcoming', () => {
       expect(futureTrip.determineTripStatus()).to.equal('upcoming')
+    })
+    it('should determine a trip is pending above all other options if status is pending', () => {
+      expect(pendingTrip.determineTripStatus()).to.equal('pending')
     })
   })
 });
