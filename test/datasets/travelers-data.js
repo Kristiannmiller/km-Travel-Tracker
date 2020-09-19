@@ -17,3 +17,4 @@ let travelersData = {
     }
   ]
 }
+export default travelersData;

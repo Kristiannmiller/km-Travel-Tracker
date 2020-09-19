@@ -32,3 +32,4 @@ let tripsData = {
     }
   ]
 }
+export default tripsData;

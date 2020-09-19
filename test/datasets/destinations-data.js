@@ -26,3 +26,4 @@ let destinationsData = {
     }
   ]
 }
+export default destinationsData;
