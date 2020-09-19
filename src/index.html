@@ -1,13 +1,129 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" dir="ltr">
   <head>
-    <title>Webpack Starter Kit</title>
+    <meta charset="utf-8">
+    <title>AHOY! Travel-Tracker</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point:400,700&display=swap" rel="stylesheet"> -->
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
-
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <section class="loginPage hidden">
+      <h1><span>AHOY!</span><img src="" alt="" class="logo-img"></h1>
+      <h2>sign in to let the adventure begin</h2>
+      <form id="username-input" role="username-input">
+        <label class="username-label" for="username-input">username</label>
+        <input id="username-input" type="text" maxlength="11" autocomplete="off" placeholder="username">
+      </form>
+      <form id="password-input" role="password-input">
+        <label class="password-label" for="password-input">password</label>
+        <input id="password-input" type="text" maxlength="11" autocomplete="off" placeholder="password">
+      </form>
+      <button class="nav-btn login-btn" type="button" name="button">login</button>
+    </section>
+      <aside class="side-bar">
+        <h1>AHOY, Kristi!</h1>
+        <h2>Current Location:</h2>
+        <h3>Denver, Colorado</h3>
+        <section class="wrap">
+          <button class="away-trips-button">Take Me Away</button>
+        </section>
+        <section class="past-trips">
+          <h2>Past Trips</h2>
+          <section class="trip-card-container">
+            <section class="small-trip-card" id="card">
+              <h3 maxlength="40">Destination</h3>
+              <section class="photo-container">
+                <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+              </section>
+              <section class="trip-date-range">
+                <h4>10/10/20 - 10/24/20</h4>
+              </section>
+              <section class="trip-status">
+                <h4>past</h4>
+              </section>
+            </section>
+            </section>
+            <section class="trip-card-container">
+              <section class="small-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>past</h4>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+      </aside>
+    <main class="main">
+      <section class="planTripView hidden">
+        <section class="banner">
+          <h1>Plan Your Trip</h1>
+        </section>
+        <section>
+          <form action="departure-datepicker">
+            <label for="depart-date">Select Departure Date:</label>
+            <input class="depart-date" id="daySelector" type="date" min="2020-10-01" max="2025-10-01"/>
+          </form>
+          <form action="trip-duration">
+            <label for="trip-duration">Trip Duration (days)</label>
+            <input class="trip-duration" id="tripDuration" type="number">
+          </form>
+          <form action="travelers-amount">
+            <label for="travelers-amount">Number of Travelers</label>
+            <input class="travelers-amount" id="travelersAmount" type="number">
+          </form>
+          <form action="destination-input">
+            <label for="destination-input">Destination</label>
+            <select class="destination-input" id="destinationInput" type="number">
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Ollantaytambo, Peru">Ollantaytambo, Peru</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Orlando, Florida">Orlando, Florida</option>
+            </select>
+          </form>
+        </section>
+    </section>
+    <section class="dashboard">
+      <section class="banner">
+        <h1>My Upcoming Trips</h1>
+      </section>
+      <section class="upcoming-trips">
+        <section class="trip-card-container">
+          <section class="big-trip-card" id="card">
+            <h3 maxlength="40">Destination</h3>
+            <section class="photo-container">
+              <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+            </section>
+            <section class="trip-date-range">
+              <h4>10/10/20 - 10/24/20</h4>
+            </section>
+            <section class="trip-status">
+              <h4>upcoming</h4>
+            </section>
+          </section>
+        </section>
+        <section class="trip-card-container">
+          <section class="big-trip-card" id="card">
+            <h3 maxlength="40">Destination</h3>
+            <section class="photo-container">
+              <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+            </section>
+              <section class="trip-date-range">
+                <h4>10/10/20 - 10/24/20</h4>
+              </section>
+              <section class="trip-status">
+                <h4>upcoming</h4>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
   </body>
 </html>

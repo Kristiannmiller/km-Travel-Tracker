@@ -1,0 +1,100 @@
+/*=== Reset ===*/
+
+html, body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%
+}
+
+body {
+  background-image: url('../images/Parchment-3.jpg');
+  background-attachment: fixed;
+  display: grid;
+  font-family: 'calibri', sans-serif;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "aside main"
+    "aside main"
+    "aside main";
+  height: 100vh;
+  margin: 20px;
+  padding: 0;
+}
+
+aside {
+  grid-area: aside;
+}
+
+.hidden {
+  display: none;
+}
+
+.loginPage {
+  width: 100%;
+  text-align: center;
+  grid-column: 1 span 2;
+  grid-row: 2;
+}
+.side-bar {
+}
+
+.side-bar .trip-card-container {
+  background-color: white;
+  border: 2px dashed #130702;
+  border-radius: 7px;
+  cursor: pointer;
+  height: 20%;
+  margin: 20px;
+  padding: 15px;
+  width: 250px;
+}
+.side-bar .photo-preview {
+  width: 50px;
+}
+
+.dashboard .upcoming-trips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+}
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.big-trip-card {
+  display: grid;
+  border: 2px dashed #130702;
+  background-color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  height: 250px;
+  margin: 20px;
+  padding: 15px;
+  width: 250px;
+}
+
+.dashboard .photo-preview {
+  width: 100%;
+}
+
+.big-trip-card:hover .photo-preview {
+  opacity: 50%;
+  transition: .8s ease;
+}
+
+// .big-trip-card:hover .text {
+//   font-size: 20px;
+//   opacity: 100%;
+//   transition: .5s ease;
+//   width: 100%;
+// }
