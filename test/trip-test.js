@@ -10,6 +10,7 @@ describe('Trip', function() {
   let pastTrip;
   let presentTrip;
   let futureTrip;
+  let pendingTrip;
   let traveler;
   let destination;
 
@@ -24,28 +25,36 @@ describe('Trip', function() {
       expect(Trip).to.be.a('function');
     });
     it('should contain all properties within the initial trip data', () => {
-      expect(trip.id).to.equal(1)
-      expect(trip.travelerID).to.equal(1)
-      expect(trip.destinationID).to.equal(1)
-      expect(trip.totalTravelers).to.equal(1)
-      expect(trip.departDate).to.equal("2019/09/16")
-      expect(trip.duration).to.equal(8)
-      expect(trip.status).to.equal("approved")
-      expect(trip.suggestedActivities).to.deep.equal([])
+      expect(pastTrip.id).to.equal(1)
+      expect(pastTrip.travelerID).to.equal(1)
+      expect(pastTrip.destinationID).to.equal(1)
+      expect(pastTrip.totalTravelers).to.equal(1)
+      expect(pastTrip.departDate).to.equal("2019/09/16")
+      expect(pastTrip.duration).to.equal(8)
+      expect(pastTrip.status).to.equal("approved")
+      expect(pastTrip.suggestedActivities).to.deep.equal([])
     });
+  })
+  describe('dateRange', () => {
+    it('should return an array of dates for duration of trip', () => {
+      expect(pastTrip.dateRange()).to.deep.equal(
+        ["2019/09/16", "2019/09/17", "2019/09/18",
+      "2019/09/19", "2019/09/20", "2019/09/21",
+    "2019/09/22", "2019/09/23"])
+    })
   })
   describe('determineTripStatus', () => {
     it('should determine if a trip is past', () => {
-      expect(pastTrip.determineTripStatus()).to.equal('past')
+      expect(pastTrip.determineTripStatus("2020/09/19")).to.equal('past')
     })
     it('should determine if a trip is present', () => {
-      expect(presentTrip.determineTripStatus()).to.equal('present')
+      expect(presentTrip.determineTripStatus("2020/09/19")).to.equal('present')
     })
     it('should determine if a trip is upcoming', () => {
-      expect(futureTrip.determineTripStatus()).to.equal('upcoming')
+      expect(futureTrip.determineTripStatus("2020/09/19")).to.equal('upcoming')
     })
     it('should determine a trip is pending above all other options if status is pending', () => {
-      expect(pendingTrip.determineTripStatus()).to.equal('pending')
+      expect(pendingTrip.determineTripStatus("2020/09/19")).to.equal('pending')
     })
   })
 });
