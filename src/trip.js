@@ -37,5 +37,12 @@ class Trip {
       return 'upcoming'
     }
   }
+  determineTripCost() {
+    let tripCost = 0
+    tripCost += this.destinationData.estimatedLodgingCostPerDay * this.duration
+    tripCost += this.destinationData.estimatedFlightCostPerPerson * this.totalTravelers
+    tripCost += tripCost * .10
+    return parseFloat(tripCost.toFixed(2))
+  }
 }
 export default Trip;
