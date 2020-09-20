@@ -1,7 +1,7 @@
 import moment from 'moment'
 
 class Trip {
-  constructor(tripData) {
+  constructor(tripData, destinationData) {
     this.id = tripData.id
     this.travelerID = tripData.userID
     this.destinationID = tripData.destinationID
@@ -10,6 +10,7 @@ class Trip {
     this.duration = tripData.duration
     this.status = tripData.status
     this.suggestedActivities = tripData.suggestedActivities
+    this.destinationData = destinationData
   }
 
   dateRange() {
@@ -35,6 +36,13 @@ class Trip {
     if (moment(new Date(compareDate)).isBefore(moment(new Date(this.departDate)), 'day')) {
       return 'upcoming'
     }
+  }
+  determineTripCost() {
+    let tripCost = 0
+    tripCost += this.destinationData.estimatedLodgingCostPerDay * this.duration
+    tripCost += this.destinationData.estimatedFlightCostPerPerson * this.totalTravelers
+    tripCost += tripCost * .10
+    return parseFloat(tripCost.toFixed(2))
   }
 }
 export default Trip;

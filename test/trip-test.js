@@ -6,6 +6,7 @@ import travelersData from './datasets/travelers-data.js';
 import tripsData from './datasets/trips-data.js';
 import Trip from '../src/trip.js';
 
+
 describe('Trip', function() {
   let pastTrip;
   let presentTrip;
@@ -15,10 +16,10 @@ describe('Trip', function() {
   let destination;
 
   beforeEach(function() {
-    pastTrip = new Trip(tripsData.trips[0])
-    futureTrip = new Trip(tripsData.trips[1])
-    presentTrip = new Trip(tripsData.trips[2])
-    pendingTrip = new Trip(tripsData.trips[3])
+    pastTrip = new Trip(tripsData.trips[0], destinationsData.destinations[0])
+    futureTrip = new Trip(tripsData.trips[1], destinationsData.destinations[1])
+    presentTrip = new Trip(tripsData.trips[2], destinationsData.destinations[2])
+    pendingTrip = new Trip(tripsData.trips[3], destinationsData.destinations[0])
   });
   describe('functionality and properties', () => {
     it('should be a function', () => {
@@ -55,6 +56,11 @@ describe('Trip', function() {
     })
     it('should determine a trip is pending above all other options if status is pending', () => {
       expect(pendingTrip.determineTripStatus("2020/09/19")).to.equal('pending')
+    })
+  })
+  describe('determineTripCost', () => {
+    it('should give an estimated cost for a trip including 10% agent fee', () => {
+      expect(presentTrip.determineTripCost()).to.equal(6611.00)
     })
   })
 });
