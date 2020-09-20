@@ -1,7 +1,7 @@
 import moment from 'moment'
 
 class Trip {
-  constructor(tripData) {
+  constructor(tripData, destinationData) {
     this.id = tripData.id
     this.travelerID = tripData.userID
     this.destinationID = tripData.destinationID
@@ -10,6 +10,7 @@ class Trip {
     this.duration = tripData.duration
     this.status = tripData.status
     this.suggestedActivities = tripData.suggestedActivities
+    this.destinationData = destinationData
   }
 
   dateRange() {

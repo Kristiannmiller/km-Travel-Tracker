@@ -6,6 +6,7 @@ import travelersData from './datasets/travelers-data.js';
 import tripsData from './datasets/trips-data.js';
 import Trip from '../src/trip.js';
 
+
 describe('Trip', function() {
   let pastTrip;
   let presentTrip;
@@ -15,10 +16,10 @@ describe('Trip', function() {
   let destination;
 
   beforeEach(function() {
-    pastTrip = new Trip(tripsData.trips[0])
-    futureTrip = new Trip(tripsData.trips[1])
-    presentTrip = new Trip(tripsData.trips[2])
-    pendingTrip = new Trip(tripsData.trips[3])
+    pastTrip = new Trip(tripsData.trips[0], destinationsData.destinations[0])
+    futureTrip = new Trip(tripsData.trips[1], destinationsData.destinations[1])
+    presentTrip = new Trip(tripsData.trips[2], destinationsData.destinations[2])
+    pendingTrip = new Trip(tripsData.trips[3], destinationsData.destinations[0])
   });
   describe('functionality and properties', () => {
     it('should be a function', () => {
