@@ -40,5 +40,18 @@ class Traveler {
       }
     })
   }
+  determineYearlyTripCost(year) {
+    let yearsTrips = []
+    this.allTrips.forEach(trip => {
+      if (+trip.departDate.split('/')[0] === year) {
+        yearsTrips.push(trip)
+      }
+    })
+    let totalCost = yearsTrips.reduce((total, trip) => {
+      total += trip.determineTripCost()
+      return total
+    }, 0)
+    return +parseFloat(totalCost).toFixed(2)
+  }
 }
 export default Traveler;
