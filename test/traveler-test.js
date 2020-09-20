@@ -26,5 +26,11 @@ describe('Traveler', function() {
       expect(traveler1.name).to.equal('Ham Leadbeater')
       expect(traveler1.travelerType).to.equal('relaxer')
     })
+    it('should have empty arrays for trips by status', () => {
+      expect(traveler1.pastTrips).to.deep.equal([])
+      expect(traveler1.futureTrips).to.deep.equal([])
+      expect(traveler1.pendingTrips).to.deep.equal([])
+      expect(traveler1.currentTrip).to.deep.equal([])
+    })
   })
 })
