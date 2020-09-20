@@ -32,7 +32,20 @@ describe('Traveler', function() {
       expect(traveler1.pendingTrips).to.deep.equal([])
     })
     it('should be in Denver, Colorado by default', () => {
-      expect(traveler1.currentLocation).to.deep.equal({destination: "Denver, Colorado"})
+      expect(traveler1.currentLocation).to.equal("Denver, Colorado")
+    })
+  })
+  describe('determineTrips', () => {
+    it('should sort traveler trips into appropriate status arrays', () => {
+      traveler1.determineTrips(tripsData.trips, '2020/09/19', destinationsData.destinations)
+      expect(traveler1.pastTrips.length).to.equal(3)
+      expect(traveler1.futureTrips.length).to.equal(1)
+      expect(traveler1.pendingTrips.length).to.equal(2)
+      expect(traveler1.allTrips.length).to.equal(7)
+    })
+    it('should update currentLocation if the traveler is traveling', () => {
+      traveler1.determineTrips(tripsData.trips, '2020/09/19', destinationsData.destinations)
+      expect(traveler1.currentLocation).to.equal("Sydney, Austrailia")
     })
   })
 })
