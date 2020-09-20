@@ -51,6 +51,26 @@ let tripsData = {
       "suggestedActivities": []
     },
     {
+      "id": 5,
+      "userID": 3,
+      "destinationID": 1,
+      "travelers": 1,
+      "date": "2020/09/16",
+      "duration": 8,
+      "status": "approved",
+      "suggestedActivities": []
+    },
+    {
+      "id": 5,
+      "userID": 3,
+      "destinationID": 3,
+      "travelers": 1,
+      "date": "2020/05/16",
+      "duration": 8,
+      "status": "approved",
+      "suggestedActivities": []
+    },
+    {
       "id": 2,
       "userID": 1,
       "destinationID": 3,
