@@ -53,4 +53,10 @@ describe('Traveler', function() {
       expect(traveler1.currentLocation).to.equal("Sydney, Austrailia")
     })
   })
+  describe('determineYearlyTripCost', () => {
+    it('should determine the total amount spent on trips for a given year', () => {
+      traveler3.determineTrips(tripsData.trips, '2020/09/19', destinationsData.destinations)
+      expect(traveler3.determineYearlyTripCost(2020)).to.equal(3245.00)
+    })
+  })
 })
