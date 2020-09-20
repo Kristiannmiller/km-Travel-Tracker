@@ -58,4 +58,9 @@ describe('Trip', function() {
       expect(pendingTrip.determineTripStatus("2020/09/19")).to.equal('pending')
     })
   })
+  describe('determineTripCost', () => {
+    it('should give an estimated cost for a trip including 10% agent fee', () => {
+      expect(presentTrip.determineTripCost()).to.equal(6611.00)
+    })
+  })
 });
