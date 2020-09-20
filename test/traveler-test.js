@@ -30,7 +30,9 @@ describe('Traveler', function() {
       expect(traveler1.pastTrips).to.deep.equal([])
       expect(traveler1.futureTrips).to.deep.equal([])
       expect(traveler1.pendingTrips).to.deep.equal([])
-      expect(traveler1.currentTrip).to.deep.equal([])
+    })
+    it('should be in Denver, Colorado by default', () => {
+      expect(traveler1.currentLocation).to.deep.equal({destination: "Denver, Colorado"})
     })
   })
 })
