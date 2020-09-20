@@ -11,6 +11,9 @@ class Traveler {
     this.pendingTrips = []
     this.currentLocation = "Denver, Colorado"
   }
+  sayFirstName() {
+    return this.name.split(' ')[0]
+  }
   determineTrips(trips, currentDate, allDestinations) {
     trips.forEach(trip => {
       let tripDestination

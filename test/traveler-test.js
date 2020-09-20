@@ -35,6 +35,11 @@ describe('Traveler', function() {
       expect(traveler1.currentLocation).to.equal("Denver, Colorado")
     })
   })
+  describe('sayFirstName', () => {
+    it('should say the first name of the traveler', () => {
+      expect(traveler1.sayFirstName()).to.equal("Ham")
+    })
+  })
   describe('determineTrips', () => {
     it('should sort traveler trips into appropriate status arrays', () => {
       traveler1.determineTrips(tripsData.trips, '2020/09/19', destinationsData.destinations)
