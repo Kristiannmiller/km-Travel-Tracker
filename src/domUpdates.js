@@ -20,7 +20,11 @@ const domUpdates = {
   },
   greetTraveler(currentTraveler) {
     const greetingText = document.querySelector('.greeting')
-    greetingText.innerText = `AHOY! ${currentTraveler.sayFirstName()}`
+    greetingText.innerText = `AHOY, ${currentTraveler.sayFirstName()}!`
+  },
+  displayCurrentLocation(currentTraveler) {
+    const locationText = document.querySelector('.currentLocation')
+    locationText.innerText = `${currentTraveler.currentLocation}`
   }
 }
 

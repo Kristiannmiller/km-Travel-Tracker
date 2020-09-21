@@ -45,6 +45,8 @@ function determineValidID(event) {
 function displayDashboard(userID) {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.greetTraveler(currentTraveler)
+  domUpdates.displayCurrentLocation(currentTraveler)
+  
 }
 
 function loadTravelerInfo(userID) {
