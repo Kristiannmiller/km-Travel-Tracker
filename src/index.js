@@ -37,11 +37,11 @@ function determineValidID(event) {
   } else if (!passwordInput || passwordInput !== 'travel2020') {
     alert('please enter a valid password')
   } else {
-    loadPageInfo(userID)
+    loadTravelerInfo(userID)
   }
 }
 
-function loadPageInfo(userID) {
+function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
     currentTraveler = new Traveler(data[0])
     destinationsData = data[1]
