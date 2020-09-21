@@ -38,19 +38,21 @@ function determineValidID(event) {
   } else if (!passwordInput || passwordInput !== 'travel2020') {
     alert('please enter a valid password')
   } else {
-    displayDashboard(userID)
+    loadTravelerInfo(userID)
   }
 }
 
 function displayDashboard(userID) {
-  loadTravelerInfo(userID)
   domUpdates.changePageDisplay('dashboard')
+  domUpdates.greetTraveler(currentTraveler)
 }
+
 function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
     currentTraveler = new Traveler(data[0])
     destinationsData = data[1]
     currentTrips = data[2].filter(trip => trip.userID === currentTraveler.id)
     currentTraveler.determineTrips(currentTrips, now, destinationsData)
+    displayDashboard(userID)
   })
 }
