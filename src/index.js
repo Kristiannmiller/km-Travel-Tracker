@@ -26,6 +26,7 @@ let currentTrips
 let now = moment().format('YYYY/MM/DD')
 
 // *************************** //
+
 function determineValidID(event) {
   event.preventDefault()
   let usernameInput = document.querySelector('#username-input').value
@@ -37,10 +38,14 @@ function determineValidID(event) {
   } else if (!passwordInput || passwordInput !== 'travel2020') {
     alert('please enter a valid password')
   } else {
-    loadTravelerInfo(userID)
+    displayDashboard(userID)
   }
 }
 
+function displayDashboard(userID) {
+  loadTravelerInfo(userID)
+  domUpdates.changePageDisplay('dashboard')
+}
 function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
     currentTraveler = new Traveler(data[0])
