@@ -17,6 +17,10 @@ const domUpdates = {
   },
   hidePages(pages) {
     pages.forEach(page => page.classList.add('hidden'))
+  },
+  greetTraveler(currentTraveler) {
+    const greetingText = document.querySelector('.greeting')
+    greetingText.innerText = `AHOY! ${currentTraveler.sayFirstName()}`
   }
 }
 
