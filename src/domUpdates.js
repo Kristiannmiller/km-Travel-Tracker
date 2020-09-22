@@ -37,10 +37,11 @@ const domUpdates = {
   },
   displayTripCardsBanner(trips, tripCardsSection, bannerMessage) {
     let banner = document.querySelector('.banner')
-    if (trips === []) {
+    if (trips.length === 0) {
+      tripCardsSection.innerHTML = ``
       banner.innerHTML =
-      `<h1>No Trips to See Here!</h1>
-        <h2>Click "Book a Trip" to start planning your next adventure</h2>`
+      `<h2>No Trips to See Here!</h2>
+        <h1>Click "Book a Trip" to start planning your next adventure</h1>`
     } else {
       banner.innerHTML =
       `<h1>${bannerMessage}</h1>`
@@ -100,7 +101,7 @@ const domUpdates = {
     let tripDetailsPopup = document.querySelector(".trip-details");
     tripDetailsPopup.style.display = "none";
     document.getElementById("overlay").remove();
-  }
+  },
 }
 
 export default domUpdates;
