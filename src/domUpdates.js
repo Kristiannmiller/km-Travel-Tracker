@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const domUpdates = {
   changePageDisplay(displayPage) {
     const loginPage = document.querySelector('.loginPage')
@@ -26,6 +28,44 @@ const domUpdates = {
     const locationText = document.querySelector('.currentLocation')
     locationText.innerText = `${currentTraveler.currentLocation}`
   },
+  displayTrips(trips, tripCardsSection, bannerMessage) {
+    this.displayTripCardsBanner(trips, tripCardsSection, bannerMessage)
+  },
+  displayTripCardsBanner(trips, tripCardsSection, bannerMessage) {
+    let banner = document.querySelector('.banner')
+    if (trips === []) {
+      banner.innerHTML =
+      `<h1>No Trips to See Here!</h1>
+        <h2>Click "Book a Trip" to start planning your next adventure</h2>`
+    } else {
+      banner.innerHTML =
+      `<h1>${bannerMessage}</h1>`
+      this.displayTripCards(trips, tripCardsSection)
+    }
+  },
+  displayTripCards(trips, tripCardsSection) {
+    trips.forEach(trip => {
+      let range = trip.dateRange()
+      let startDate = moment(new Date(range[0])).format('MM/DD/YYYY')
+      let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
+      tripCardsSection.innerHTML +=
+      `<section class="trip-card-container">
+          <section class="big-trip-card" id="card">
+            <h3 maxlength="40">${trip.destinationData.destination}</h3>
+            <section class="photo-container">
+              <img src="${trip.image}" class="photo-preview" alt="${trip.alt}" title="trip">
+              <div class="text">Take Me Away</div>
+            </section>
+            <section class="trip-date-range">
+              <h4>${startDate} - ${endDate}</h4>
+            </section>
+            <section class="trip-status">
+              <h4>${trip.status}</h4>
+            </section>
+          </section>
+      </section>`
+    })
+  },
   displayPastTripsInSideBar(currentTraveler) {
     const pastTripsSideBar = document.querySelector('.past-trips')
     if (currentTraveler.pastTrips === []) {
@@ -46,7 +86,7 @@ const domUpdates = {
               <h4>${trip.departDate} - ${endDate}</h4>
             </section>
             <section class="trip-status">
-              <h4>Trip Status: Past</h4>
+              <h4>Trip Status: ${trip.status}</h4>
             </section>
           </section>
         </section>`
