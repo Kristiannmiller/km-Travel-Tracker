@@ -30,7 +30,7 @@ loginButton.addEventListener('click', determineValidID);
 navAll.addEventListener('click', displayMainDashboard);
 navUpcoming.addEventListener('click', displayUpcomingTripView);
 navPast.addEventListener('click', displayPastTripView);
-navPending.addEventListener('click', displayUpcomingTripView); //displayPendingTripView
+navPending.addEventListener('click', displayPendingTripView);
 navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
@@ -69,6 +69,12 @@ function displayPastTripView() {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.displayTrips(currentTraveler.pastTrips, tripCardsSection, "My Past Trips")
 }
+function displayPendingTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.pendingTrips, tripCardsSection, "My Pending Trips")
+
+}
+
 
 function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
