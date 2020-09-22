@@ -40,7 +40,7 @@ body {
 header {
   width: 100%;
   display: inline-grid;
-  grid-template-rows: 25% 75%;
+  grid-template-rows: 83% 17%;
 }
 
 main {
@@ -72,28 +72,43 @@ main {
 
 .currentLocation {
   display: inline-block;
+  flex: none;
 }
 
 .logo {
-  height: 70px;
+  height: 100px;
+  padding: 0px 15px 20px 20px;
 }
 
 .greeting {
+  height: fit-content;
   flex: none;
   font-size: 40px;
   color: #548687;
   font-family: 'Rye', cursive;
-  padding: 12px;
-}
-
-.currentLocation {
-  flex: none;
+  padding: 31px 15px 12px 15px;
 }
 
 .greetingWrap {
+  height: fit-content;
   display: inline-flex;
+  text-align: center;
+  vertical-align: sub;
 }
 
+.locationWrap {
+  text-align: left;
+  height: fit-content;
+  align-self: flex-end;
+  padding: 40px;
+}
+
+.totalCost {
+  text-align: left;
+  height: fit-content;
+  align-self: flex-end;
+  padding: 40px;
+}
 /*=== Nav Bar ===*/
 
 ul {
@@ -104,6 +119,7 @@ ul {
   margin: 0;
   padding: 2px;
   text-align: center;
+  font-size: 20px;
 }
 
 li {
@@ -113,7 +129,7 @@ li {
   text-decoration: none;
   vertical-align: sub;
   cursor: pointer;
-  padding: 0vh 5vh 0vh 5vh;
+  padding: 0vh 8vh;
 }
 
 li:hover {
