@@ -1,5 +1,4 @@
 import moment from 'moment';
-import Trip from './trip.js';
 
 const domUpdates = {
   changePageDisplay(displayPage) {

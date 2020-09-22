@@ -110,7 +110,7 @@ function determineTrip(event) {
 }
 function getDestinationsList() {
   let destinationList = destinationsData.reduce((list, destination) => {
-    if(!list.includes(destination.destination)) {
+    if (!list.includes(destination.destination)) {
       list.push(destination.destination)
     }
     return list
