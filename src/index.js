@@ -3,6 +3,7 @@ import './css/base.scss';
 import './css/styles.scss';
 import './images/placeholderVacayPhoto.jpg';
 import './images/Parchment-3.jpg';
+import './images/compassLogo.png';
 import Traveler from './traveler.js';
 import Trip from './trip.js';
 import domUpdates from './domUpdates.js';
@@ -46,7 +47,7 @@ function displayDashboard(userID) {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.greetTraveler(currentTraveler)
   domUpdates.displayCurrentLocation(currentTraveler)
-  
+  domUpdates.displayPastTripsInSideBar(currentTraveler)
 }
 
 function loadTravelerInfo(userID) {

@@ -21,10 +21,34 @@
       <button class="login-button" type="button" name="button">Let's Go</button>
     </section>
     <section class="dashboard hidden">
+      <header>
+        <section>
+          <section class="greetingWrap">
+            <img class="logo" src="./images/compassLogo.png" alt="compass logo">
+            <h1 class="greeting"></h1>
+          </section>
+          <section>
+            <h4>Current Location:</h4>
+            <h3 class="currentLocation"></h3>
+          </section>
+        </section>
+        <nav class="nav-bar">
+          <ul>
+            <li>ALL TRIPS</li>
+            <li>UPCOMING TRIPS</li>
+            <li>PAST TRIPS</li>
+            <li>PENDING TRIPS</li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+
+
+
+
+    <section class="dashboard hidden">
       <aside class="side-bar">
         <h1 class="greeting"></h1>
-        <h2>Current Location:</h2>
-        <h3 class="currentLocation"></h3>
         <section class="wrap">
           <button class="away-trips-button">Take Me Away</button>
         </section>
@@ -44,21 +68,6 @@
               </section>
             </section>
           </section>
-          <section class="trip-card-container">
-            <section class="small-trip-card" id="card">
-              <h3 maxlength="40">Destination</h3>
-              <section class="photo-container">
-                <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
-              </section>
-              <section class="trip-date-range">
-                <h4>10/10/20 - 10/24/20</h4>
-              </section>
-              <section class="trip-status">
-                <h4>past</h4>
-              </section>
-            </section>
-          </section>
-        </section>
     </aside>
     <main class="main">
       <section class="planTripView hidden">
@@ -89,7 +98,7 @@
           </form>
         </section>
       </section>
-      <section class="upcomingView">
+      <section class="upcomingView hidden">
         <section class="banner">
           <h1>My Upcoming Trips</h1>
         </section>
@@ -126,6 +135,7 @@
       </section>
     </main>
   </section>
+</section>
 
 
 

@@ -1,4 +1,4 @@
-/*=== Reset ===*/
+/*=== Reset/Global ===*/
 
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -9,35 +9,92 @@ html, body {
   height: 100%
 }
 
+.hidden {
+  display: none;
+}
+
+/*=== Main Sections ===*/
+
 body {
   background-image: url('../images/Parchment-3.jpg');
   background-attachment: fixed;
-  display: grid;
-  font-family: 'calibri', sans-serif;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 50% 50%;
-  grid-template-areas:
-    "aside main"
-    "aside main"
-    "aside main";
   height: 100vh;
   margin: 20px;
   padding: 0;
 }
 
+header {
+  width: 100%;
+  display: inline-grid;
+  grid-template-rows: 25% 75%;
+}
+
+h2{
+
+}
+
+ul {
+  list-style-type: none;
+  background-color: #130702;
+  overflow: hidden;
+  height: 40px;
+  margin: 0;
+  padding: 2px;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  color: #F2EDE3;
+  padding: 14px 16px;
+  text-decoration: none;
+  vertical-align: sub;
+  cursor: pointer;
+  padding: 0vh 5vh 0vh 5vh;
+}
+
+li:hover {
+  color: #548687
+}
+
+li:active {
+  background-color: #548687;
+  font-color: #130702;
+}
+
+.nav-bar {
+  align-self: flex-end;
+}
+
+/*=== Header ===*/
+
+.logo {
+  height: 70px;
+}
+
+.greeting {
+  flex: none;
+  font-size: 40px;
+  color: #548687;
+  padding: 12px;
+}
+
+.currentLocation {
+  flex: none;
+}
+
+.greetingWrap {
+  display: inline-flex;
+}
 aside {
   grid-area: aside;
 }
 
-.hidden {
-  display: none;
-}
 
 .loginPage {
   width: 100%;
   text-align: center;
-  grid-column: 1 span 2;
-  grid-row: 2;
+  margin-top: 40vh;
 }
 .side-bar {
 }
@@ -63,6 +120,15 @@ aside {
 
 }
 main {
+  display: grid;
+  font-family: 'calibri', sans-serif;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "aside main"
+    "aside main"
+    "aside main";
+
   grid-area: main;
   display: flex;
   justify-content: center;
