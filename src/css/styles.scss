@@ -156,3 +156,58 @@ main {
   width: 0%;
   transition: .5s ease;
 }
+.trip-details {
+  background: white;
+  border: 2px solid #130702;
+  border-radius: 360px;
+  box-shadow: 1px 1px 115px black;
+  display: none;
+  height: 500px;
+  width: 500px;
+  overflow-x: scroll;
+  padding: 1% 1% 1% 1%;
+  position: fixed;
+  right: 25%;
+  top: 15%;
+  z-index: 1000;
+}
+
+#overlay {
+  filter:alpha(opacity=50);
+  height:100%;
+  left:0;
+  opacity:0.5;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+}
+
+#exitTripDetails {
+  background: white;
+  border: 2px solid #130702;
+  border-radius: 5px;
+  color: #130702;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin: -4% -3% 2% -1%;
+  position: fixed;
+  transition: .3s ease;
+}
+
+#exit-recipe-btn:hover {
+  background: #548687;
+  transition: .3s ease;
+}
+
+#tripDetailsDest {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 37px;
+  margin: 0;
+  height: 50%;
+  padding: 75px 0px 0px 0px;
+  text-shadow: 0px 0px 6px black;
+}

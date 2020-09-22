@@ -51,10 +51,10 @@ const domUpdates = {
       let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
       tripCardsSection.innerHTML +=
       `<section class="trip-card-container">
-          <section class="big-trip-card" id="card">
+          <section class="big-trip-card">
             <h3 maxlength="40">${trip.destinationData.destination}</h3>
             <section class="photo-container">
-              <img src="${trip.image}" class="photo-preview" alt="${trip.alt}" title="trip">
+              <img src="${trip.image}" class="photo-preview" id="trip-${trip.id}" alt="${trip.alt}" title="trip">
               <div class="text">Take Me Away</div>
             </section>
             <section class="trip-date-range">
@@ -67,32 +67,30 @@ const domUpdates = {
       </section>`
     })
   },
-  displayPastTripsInSideBar(currentTraveler) {
-    const pastTripsSideBar = document.querySelector('.past-trips')
-    if (currentTraveler.pastTrips === []) {
-      pastTripsSideBar.classList.add('hidden')
-    } else {
-      pastTripsSideBar.innerHTML = `<h2>Past Trips</h2>`
-      currentTraveler.pastTrips.forEach(trip => {
-        let range = trip.dateRange()
-        let endDate = range[range.length - 1]
-        pastTripsSideBar.innerHTML +=
-        `<section class="trip-card-container">
-          <section class="small-trip-card" id="card">
-            <h3 maxlength="40">${trip.destinationData.destination}</h3>
-            <section class="photo-container">
-              <img src="${trip.destinationdata.image}" class="photo-preview" alt="${trip.destinationData.alt}" title="trip">
-            </section>
-            <section class="trip-date-range">
-              <h4>${trip.departDate} - ${endDate}</h4>
-            </section>
-            <section class="trip-status">
-              <h4>Trip Status: ${trip.status}</h4>
-            </section>
-          </section>
-        </section>`
-      })
-    }
+  displayTripDetails(trip) {
+    console.log(trip);
+    let tripDetailsPopup = document.querySelector(".trip-details");
+    tripDetailsPopup.style.display = "inline";
+    tripDetailsPopup.innerHTML = ''
+    this.displayTripDetailsHeader(trip, tripDetailsPopup)
+    this.displayTripDetailsImage(trip)
+    tripDetailsPopup.insertAdjacentHTML("beforebegin", "<section id='overlay'></div>");
+  },
+  displayTripDetailsHeader(trip, tripDetailsPopup) {
+    let range = trip.dateRange()
+    let startDate = moment(new Date(range[0])).format('MM/DD/YYYY')
+    let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
+    let tripDetailsHeader =
+    `<button id="exitTripDetails">X</button>
+      <h3 id="tripDetailsDest">${trip.destinationData.destination}</h3>
+      <h4>Dates : ${startDate} - ${endDate} (${trip.duration} days)</h4>
+      <h4>Total Travelers : ${trip.totalTravelers}</h4>
+      <h4>Estimated Cost : $${trip.determineTripCost()}</h4>
+      <h4>Status : ${trip.status}</h4>`
+    tripDetailsPopup.insertAdjacentHTML("beforeend", tripDetailsHeader);
+  },
+  displayTripDetailsImage(trip) {
+    document.getElementById("tripDetailsDest").style.backgroundImage = `url(${trip.image})`
   }
 }
 

@@ -22,6 +22,7 @@ const navUpcoming = document.querySelector('.upcomingNav')
 const navPast = document.querySelector('.pastNav')
 const navPending = document.querySelector('.pendingNav')
 const navBook = document.querySelector('.bookNav')
+// const exitTripDetails = document.querySelector('#exitTripDetails')
 
 
 
@@ -31,6 +32,8 @@ navAll.addEventListener('click', displayMainDashboard);
 navUpcoming.addEventListener('click', displayUpcomingTripView);
 navPast.addEventListener('click', displayPastTripView);
 navPending.addEventListener('click', displayPendingTripView);
+tripCardsSection.addEventListener('click', determineTrip)
+// exitTripDetails.addEventListener('click', domUpdates.)
 navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
@@ -72,10 +75,7 @@ function displayPastTripView() {
 function displayPendingTripView() {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.displayTrips(currentTraveler.pendingTrips, tripCardsSection, "My Pending Trips")
-
 }
-
-
 function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
     currentTraveler = new Traveler(data[0])
@@ -84,4 +84,10 @@ function loadTravelerInfo(userID) {
     currentTraveler.determineTrips(currentTrips, now, destinationsData)
     displayMainDashboard(userID)
   })
+}
+function determineTrip(event) {
+  let trip = currentTraveler.allTrips.find(trip => {
+    return +event.target.id.split('-')[1] === trip.id
+  })
+  domUpdates.displayTripDetails(trip)
 }
