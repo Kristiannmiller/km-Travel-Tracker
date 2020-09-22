@@ -161,7 +161,6 @@ main {
   border: 2px solid #130702;
   border-radius: 360px;
   box-shadow: 1px 1px 115px black;
-  display: none;
   height: 500px;
   width: 500px;
   overflow-x: scroll;
@@ -189,14 +188,10 @@ main {
   border-radius: 5px;
   color: #130702;
   cursor: pointer;
-  font-size: 20px;
   font-weight: 700;
-  margin: -4% -3% 2% -1%;
-  position: fixed;
-  transition: .3s ease;
 }
 
-#exit-recipe-btn:hover {
+#exitTripDetails:hover {
   background: #548687;
   transition: .3s ease;
 }

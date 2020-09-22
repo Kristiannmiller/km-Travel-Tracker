@@ -22,7 +22,7 @@ const navUpcoming = document.querySelector('.upcomingNav')
 const navPast = document.querySelector('.pastNav')
 const navPending = document.querySelector('.pendingNav')
 const navBook = document.querySelector('.bookNav')
-// const exitTripDetails = document.querySelector('#exitTripDetails')
+const exitTripDetails = document.querySelector('.trip-details')
 
 
 
@@ -33,7 +33,7 @@ navUpcoming.addEventListener('click', displayUpcomingTripView);
 navPast.addEventListener('click', displayPastTripView);
 navPending.addEventListener('click', displayPendingTripView);
 tripCardsSection.addEventListener('click', determineTrip)
-// exitTripDetails.addEventListener('click', domUpdates.)
+exitTripDetails.addEventListener('click', exitTripDetailCard)
 navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
@@ -85,9 +85,16 @@ function loadTravelerInfo(userID) {
     displayMainDashboard(userID)
   })
 }
+function exitTripDetailCard(event) {
+  if (event.target === document.getElementById('exitTripDetails')) {
+    domUpdates.exitTripDetails()
+  }
+}
 function determineTrip(event) {
   let trip = currentTraveler.allTrips.find(trip => {
     return +event.target.id.split('-')[1] === trip.id
   })
-  domUpdates.displayTripDetails(trip)
+  if (trip) {
+    domUpdates.displayTripDetails(trip)  
+  }
 }

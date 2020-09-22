@@ -80,17 +80,22 @@ const domUpdates = {
     let range = trip.dateRange()
     let startDate = moment(new Date(range[0])).format('MM/DD/YYYY')
     let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
-    let tripDetailsHeader =
-    `<button id="exitTripDetails">X</button>
+    tripDetailsPopup.innerHTML = ``
+    tripDetailsPopup.innerHTML =
+    `<button id="exitTripDetails" class="exitTripDetails">X</button>
       <h3 id="tripDetailsDest">${trip.destinationData.destination}</h3>
       <h4>Dates : ${startDate} - ${endDate} (${trip.duration} days)</h4>
       <h4>Total Travelers : ${trip.totalTravelers}</h4>
       <h4>Estimated Cost : $${trip.determineTripCost()}</h4>
       <h4>Status : ${trip.status}</h4>`
-    tripDetailsPopup.insertAdjacentHTML("beforeend", tripDetailsHeader);
   },
   displayTripDetailsImage(trip) {
     document.getElementById("tripDetailsDest").style.backgroundImage = `url(${trip.image})`
+  },
+  exitTripDetails(event) {
+    let tripDetailsPopup = document.querySelector(".trip-details");
+    tripDetailsPopup.style.display = "none";
+    document.getElementById("overlay").remove();
   }
 }
 
