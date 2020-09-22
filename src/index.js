@@ -135,7 +135,7 @@ function buildNewTrip(travelerCount, startDate, duration, destination) {
   newTrip.userID = currentTraveler.id
   newTrip.destinationID = findDestination(destination).id
   newTrip.travelers = travelerCount
-  newTrip.date = startDate
+  newTrip.date = moment(new Date(startDate)).format("YYYY/MM/DD")
   newTrip.duration = duration
   newTrip.status = 'pending'
   newTrip.suggestedActivities = []
@@ -156,4 +156,5 @@ function saveTripData() {
   currentTraveler.allTrips.push(tripToAdd)
   currentTraveler.pendingTrips.push(tripToAdd)
   displayMainDashboard()
+  fetchRequests.postNewTrip(newTrip)
 }
