@@ -28,6 +28,10 @@ const domUpdates = {
     const locationText = document.querySelector('.currentLocation')
     locationText.innerText = `${currentTraveler.currentLocation}`
   },
+  displayTripCostTotal(currentTraveler, year) {
+    const totalCost = document.querySelector('.total')
+    totalCost.innerText = `$${currentTraveler.determineYearlyTripCost(+year)}`
+  },
   displayTrips(trips, tripCardsSection, bannerMessage) {
     this.displayTripCardsBanner(trips, tripCardsSection, bannerMessage)
   },

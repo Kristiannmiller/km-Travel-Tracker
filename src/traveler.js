@@ -51,7 +51,7 @@ class Traveler {
       total += trip.determineTripCost()
       return total
     }, 0)
-    return +parseFloat(totalCost).toFixed(2)
+    return +parseFloat(totalCost).toFixed(0)
   }
 }
 export default Traveler;

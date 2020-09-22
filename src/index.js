@@ -62,6 +62,7 @@ function displayMainDashboard(userID) {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.greetTraveler(currentTraveler)
   domUpdates.displayCurrentLocation(currentTraveler)
+  domUpdates.displayTripCostTotal(currentTraveler, now.split('/')[0])
   domUpdates.displayTrips(currentTraveler.allTrips, tripCardsSection, "My Trips")
 }
 function displayUpcomingTripView() {
@@ -95,6 +96,6 @@ function determineTrip(event) {
     return +event.target.id.split('-')[1] === trip.id
   })
   if (trip) {
-    domUpdates.displayTripDetails(trip)  
+    domUpdates.displayTripDetails(trip)
   }
 }
