@@ -12,7 +12,11 @@ import fetchRequests from './fetchRequests'
 
 
 // ************ QUERY SELECTORS *************** //
-let loginButton = document.querySelector('.login-button');
+const loginButton = document.querySelector('.login-button');
+const loginPage = document.querySelector('.loginPage')
+const dashboard = document.querySelector('.dashboard')
+const planTripView = document.querySelector('.planTripView')
+const tripCardsSection = document.querySelector('.tripCards')
 
 
 
@@ -43,11 +47,11 @@ function determineValidID(event) {
   }
 }
 
-function displayDashboard(userID) {
+function displayMainDashboard(userID) {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.greetTraveler(currentTraveler)
   domUpdates.displayCurrentLocation(currentTraveler)
-  domUpdates.displayPastTripsInSideBar(currentTraveler)
+  domUpdates.displayTrips(currentTraveler.allTrips, tripCardsSection, "My Trips")
 }
 
 function loadTravelerInfo(userID) {
@@ -56,6 +60,6 @@ function loadTravelerInfo(userID) {
     destinationsData = data[1]
     currentTrips = data[2].filter(trip => trip.userID === currentTraveler.id)
     currentTraveler.determineTrips(currentTrips, now, destinationsData)
-    displayDashboard(userID)
+    displayMainDashboard(userID)
   })
 }
