@@ -7,14 +7,17 @@
   </head>
   <body>
     <section class="loginPage">
-      <h1><span>AHOY!</span><img src="" alt="" class="logo-img"></h1>
+      <img src="../images/compassLogo.png" alt="company logo of an elegant pirate ship styled like an old map" class="login-logo-img">
+      <h1><span id="loginTitle">AHOY!</span>
+        <!-- <img src="../images/compassLogo.png" alt="company logo of an elegant pirate ship styled like an old map" class="login-logo-img"> -->
+      </h1>
       <h2>sign in to let the adventure begin</h2>
-      <form role="username-input">
-        <label class="username-label" for="username-input">username</label>
+      <form id="username">
+        <label for="username-input" class="username-label">username</label>
         <input id="username-input" type="text" maxlength="11" autocomplete="off" placeholder="username">
       </form>
-      <form role="password-input">
-        <label class="password-label" for="password-input">password</label>
+      <form id="password">
+        <label for="password-input" class="password-label">password</label>
         <input id="password-input" type="text" maxlength="11" autocomplete="off" placeholder="password">
       </form>
       <button class="login-button" type="button" name="button">Let's Go</button>
@@ -61,19 +64,19 @@
             <h1>Plan Your Trip</h1>
           </section>
           <section>
-            <form action="departure-datepicker">
+            <form id="datePicker">
               <label for="depart-date">Select Departure Date:</label>
               <input class="depart-date" id="daySelector" type="date" min="2020-10-01" max="2025-10-01"/>
             </form>
-            <form action="trip-duration">
+            <form id="durationNumber">
               <label for="trip-duration">Trip Duration (days)</label>
               <input class="trip-duration" min="1" id="tripDuration" type="number">
             </form>
-            <form action="travelers-amount">
+            <form id="travelerAmount">
               <label for="travelers-amount">Number of Travelers</label>
               <input class="travelers-amount" min="1" id="travelersAmount" type="number">
             </form>
-            <form action="destination-input">
+            <form id="destination">
               <label for="destination-input">Destination</label>
               <select class="destination-input" id="destinationInput" type="number">
               </select>
