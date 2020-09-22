@@ -19,7 +19,7 @@ const navPast = document.querySelector('.pastNav')
 const navPending = document.querySelector('.pendingNav')
 const navBook = document.querySelector('.bookNav')
 const exitTripDetails = document.querySelector('.trip-details')
-
+const submitTripButton = document.querySelector('.submitTripButton')
 
 
 // ************ EVENT LISTENERS *************** //
@@ -30,7 +30,8 @@ navPast.addEventListener('click', displayPastTripView);
 navPending.addEventListener('click', displayPendingTripView);
 tripCardsSection.addEventListener('click', determineTrip)
 exitTripDetails.addEventListener('click', exitTripDetailCard)
-navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
+navBook.addEventListener('click', displayBookingView);
+tripCardsSection.addEventListener('click', determineTrip);
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
 let destinationsData
@@ -94,4 +95,17 @@ function determineTrip(event) {
   if (trip) {
     domUpdates.displayTripDetails(trip)
   }
+}
+function getDestinationsList() {
+  return destinationsData.reduce((list, destination) => {
+    if(!list.includes(destination.destination)) {
+      list.push(destination.destination)
+    }
+    return list
+  }, [])
+}
+function displayBookingView() {
+  let destinationList = getDestinationsList()
+  domUpdates.changePageDisplay('planTripView')
+  domUpdates.displayDestinationDropdown(destinationList)
 }
