@@ -8,9 +8,11 @@ class Trip {
     this.totalTravelers = tripData.travelers
     this.departDate = moment(new Date(tripData.date)).format('YYYY/MM/DD')
     this.duration = tripData.duration
-    this.status = tripData.status
+    this.status = tripData.status || 'pending'
     this.suggestedActivities = tripData.suggestedActivities
     this.destinationData = destinationData
+    this.image = destinationData.image || '../images/placeholderVacayPhoto.jpg'
+    this.alt = destinationData.alt || 'image of sunset above clouds while peering out of the window of an airplane'
   }
 
   dateRange() {
