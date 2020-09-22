@@ -5,6 +5,7 @@ import './images/placeholderVacayPhoto.jpg';
 import './images/Parchment-3.jpg';
 import './images/compassLogo.png';
 import Traveler from './traveler.js';
+import Trip from './trip.js';
 import domUpdates from './domUpdates.js';
 import moment from 'moment';
 import fetchRequests from './fetchRequests'
@@ -20,6 +21,7 @@ const navPending = document.querySelector('.pendingNav')
 const navBook = document.querySelector('.bookNav')
 const exitTripDetails = document.querySelector('.trip-details')
 const submitTripButton = document.querySelector('.submitTripButton')
+const bookTripButton = document.querySelector('#bookTripButton')
 
 
 // ************ EVENT LISTENERS *************** //
@@ -32,10 +34,13 @@ tripCardsSection.addEventListener('click', determineTrip)
 exitTripDetails.addEventListener('click', exitTripDetailCard)
 navBook.addEventListener('click', displayBookingView);
 tripCardsSection.addEventListener('click', determineTrip);
+submitTripButton.addEventListener('click', displayNewTrip)
+bookTripButton.addEventListener('click', saveTripData)
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
 let destinationsData
 let currentTrips
+let newTrip = {}
 let now = moment().format('YYYY/MM/DD')
 
 // *************************** //
@@ -84,7 +89,10 @@ function loadTravelerInfo(userID) {
   })
 }
 function exitTripDetailCard(event) {
-  if (event.target === document.getElementById('exitTripDetails')) {
+  if (event.target === document.querySelector('#bookTripButton')) {
+    saveTripData()
+    domUpdates.exitTripDetails()
+  } else {
     domUpdates.exitTripDetails()
   }
 }
@@ -93,7 +101,7 @@ function determineTrip(event) {
     return +event.target.id.split('-')[1] === trip.id
   })
   if (trip) {
-    domUpdates.displayTripDetails(trip)
+    domUpdates.displayTripDetails(trip, false)
   }
 }
 function getDestinationsList() {
@@ -109,4 +117,43 @@ function displayBookingView() {
   let destinationList = getDestinationsList()
   domUpdates.changePageDisplay('planTripView')
   domUpdates.displayDestinationDropdown(destinationList)
+}
+function displayNewTrip(event) {
+  event.preventDefault()
+  const travelerCount = +document.querySelector('#travelersAmount').value
+  const startDate = document.querySelector('#daySelector').value
+  const duration = +document.querySelector('#tripDuration').value
+  const destination = document.querySelector('#destinationInput').value
+  let destinationData = findDestination(destination)
+  buildNewTrip(travelerCount, startDate, duration, destination)
+  let trip = new Trip(newTrip, destinationData)
+  domUpdates.displayTripDetails(trip, true)
+}
+function buildNewTrip(travelerCount, startDate, duration, destination) {
+  // let newTrip = {}
+  newTrip.id = Date.now()
+  newTrip.userID = currentTraveler.id
+  newTrip.destinationID = findDestination(destination).id
+  newTrip.travelers = travelerCount
+  newTrip.date = startDate
+  newTrip.duration = duration
+  newTrip.status = 'pending'
+  newTrip.suggestedActivities = []
+}
+function findDestination(destination) {
+  if (typeof destination === 'string') {
+    return destinationsData.find(location => {
+      return location.destination === destination
+    })
+  } else {
+    return destinationsData.find(location => {
+      return location.id === destination
+    })
+  }
+}
+function saveTripData() {
+  let tripToAdd = new Trip(newTrip, findDestination(newTrip.destinationID))
+  currentTraveler.allTrips.push(tripToAdd)
+  currentTraveler.pendingTrips.push(tripToAdd)
+  displayMainDashboard()
 }

@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Trip from './trip.js';
 
 const domUpdates = {
   changePageDisplay(displayPage) {
@@ -72,26 +73,29 @@ const domUpdates = {
       </section>`
     })
   },
-  displayTripDetails(trip) {
+  displayTripDetails(trip, isNew) {
     let tripDetailsPopup = document.querySelector(".trip-details");
     tripDetailsPopup.style.display = "inline";
     tripDetailsPopup.innerHTML = ''
-    this.displayTripDetailsHeader(trip, tripDetailsPopup)
+    this.displayTripDetailsHeader(trip, tripDetailsPopup, isNew)
     this.displayTripDetailsImage(trip)
     tripDetailsPopup.insertAdjacentHTML("beforebegin", "<section id='overlay'></div>");
   },
-  displayTripDetailsHeader(trip, tripDetailsPopup) {
+  displayTripDetailsHeader(trip, tripDetailsPopup, isNew) {
     let range = trip.dateRange()
     let startDate = moment(new Date(range[0])).format('MM/DD/YYYY')
     let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
     tripDetailsPopup.innerHTML = ``
     tripDetailsPopup.innerHTML =
-    `<button id="exitTripDetails" class="exitTripDetails">X</button>
-      <h3 id="tripDetailsDest">${trip.destinationData.destination}</h3>
+    `<h3 id="tripDetailsDest">${trip.destinationData.destination}</h3>
       <h4>Dates : ${startDate} - ${endDate} (${trip.duration} days)</h4>
       <h4>Total Travelers : ${trip.totalTravelers}</h4>
       <h4>Estimated Cost : $${trip.determineTripCost()}</h4>
       <h4>Status : ${trip.status}</h4>`
+    if (isNew) {
+      tripDetailsPopup.innerHTML +=
+        `<button id="bookTripButton" class="bookTrip">Book This Trip</button>`
+    }
   },
   displayTripDetailsImage(trip) {
     document.getElementById("tripDetailsDest").style.backgroundImage = `url(${trip.image})`
