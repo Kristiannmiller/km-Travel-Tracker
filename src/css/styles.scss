@@ -21,6 +21,7 @@ body {
   height: 100vh;
   margin: 20px;
   padding: 0;
+  text-align: center;
 }
 
 header {
@@ -28,6 +29,13 @@ header {
   display: inline-grid;
   grid-template-rows: 25% 75%;
 }
+
+.currentLocation{
+  display: inline-block;
+}
+// .locationWrap {
+//   display: inline-block;
+// }
 
 h2{
 
@@ -96,45 +104,19 @@ aside {
   text-align: center;
   margin-top: 40vh;
 }
-.side-bar {
-}
-
-.side-bar .trip-card-container {
-  background-color: white;
-  border: 2px dashed #130702;
-  border-radius: 7px;
-  cursor: pointer;
-  height: 20%;
-  margin: 20px;
-  padding: 15px;
-  width: 250px;
-}
-.side-bar .photo-preview {
-  width: 50px;
-}
 
 .dashboard .upcoming-trips {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-
+  grid-template-columns: 1fr 1fr 1fr;
 }
 main {
   display: grid;
   font-family: 'calibri', sans-serif;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 50% 50%;
-  grid-template-areas:
-    "aside main"
-    "aside main"
-    "aside main";
+}
 
-  grid-area: main;
-  display: flex;
-  justify-content: center;
-  align-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
+.banner {
+  font-size: 30px;
+  padding: 20px;
 }
 
 .big-trip-card {
@@ -158,9 +140,19 @@ main {
   transition: .8s ease;
 }
 
-// .big-trip-card:hover .text {
-//   font-size: 20px;
-//   opacity: 100%;
-//   transition: .5s ease;
-//   width: 100%;
-// }
+.big-trip-card:hover .text {
+  font-size: 20px;
+  opacity: 100%;
+  transition: .5s ease;
+  width: 100%;
+}
+.text {
+  font-weight: 700;
+  font-size: 0px;
+  opacity: 0%;
+  padding: 0%;
+  position: relative;
+  text-align: center;
+  width: 0%;
+  transition: .5s ease;
+}

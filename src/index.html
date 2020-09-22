@@ -27,7 +27,7 @@
             <img class="logo" src="./images/compassLogo.png" alt="compass logo">
             <h1 class="greeting"></h1>
           </section>
-          <section>
+          <section class="locationWrap">
             <h4>Current Location:</h4>
             <h3 class="currentLocation"></h3>
           </section>
@@ -38,9 +38,171 @@
             <li>UPCOMING TRIPS</li>
             <li>PAST TRIPS</li>
             <li>PENDING TRIPS</li>
+            <li>BOOK A TRIP</li>
           </ul>
         </nav>
       </header>
+      <main class="main">
+        <section class="tripCardsView hidden">
+          <section class="banner">
+            <h1>My Upcoming Trips</h1>
+          </section>
+          <section class="upcoming-trips">
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card" text:"Click For Details">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                  <div class="text">Take Me Away</div>
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+
+        <section class="planTripView hidden">
+          <section class="banner">
+            <h1>Plan Your Trip</h1>
+          </section>
+          <section>
+            <form action="departure-datepicker">
+              <label for="depart-date">Select Departure Date:</label>
+              <input class="depart-date" id="daySelector" type="date" min="2020-10-01" max="2025-10-01"/>
+            </form>
+            <form action="trip-duration">
+              <label for="trip-duration">Trip Duration (days)</label>
+              <input class="trip-duration" id="tripDuration" type="number">
+            </form>
+            <form action="travelers-amount">
+              <label for="travelers-amount">Number of Travelers</label>
+              <input class="travelers-amount" id="travelersAmount" type="number">
+            </form>
+            <form action="destination-input">
+              <label for="destination-input">Destination</label>
+              <select class="destination-input" id="destinationInput" type="number">
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Ollantaytambo, Peru">Ollantaytambo, Peru</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Orlando, Florida">Orlando, Florida</option>
+              </select>
+            </form>
+          </section>
+        </section>
+        <!-- <section class="upcomingView hidden">
+          <section class="banner">
+            <h1>My Upcoming Trips</h1>
+          </section>
+          <section class="upcoming-trips">
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+            <section class="trip-card-container">
+              <section class="big-trip-card" id="card">
+                <h3 maxlength="40">Destination</h3>
+                <section class="photo-container">
+                  <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
+                </section>
+                <section class="trip-date-range">
+                  <h4>10/10/20 - 10/24/20</h4>
+                </section>
+                <section class="trip-status">
+                  <h4>upcoming</h4>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section> -->
+      </main>
+
+
     </section>
 
 
@@ -69,71 +231,6 @@
             </section>
           </section>
     </aside>
-    <main class="main">
-      <section class="planTripView hidden">
-        <section class="banner">
-          <h1>Plan Your Trip</h1>
-        </section>
-        <section>
-          <form action="departure-datepicker">
-            <label for="depart-date">Select Departure Date:</label>
-            <input class="depart-date" id="daySelector" type="date" min="2020-10-01" max="2025-10-01"/>
-          </form>
-          <form action="trip-duration">
-            <label for="trip-duration">Trip Duration (days)</label>
-            <input class="trip-duration" id="tripDuration" type="number">
-          </form>
-          <form action="travelers-amount">
-            <label for="travelers-amount">Number of Travelers</label>
-            <input class="travelers-amount" id="travelersAmount" type="number">
-          </form>
-          <form action="destination-input">
-            <label for="destination-input">Destination</label>
-              <select class="destination-input" id="destinationInput" type="number">
-                <option value="Costa Rica">Costa Rica</option>
-                <option value="Ollantaytambo, Peru">Ollantaytambo, Peru</option>
-                <option value="Jamaica">Jamaica</option>
-                <option value="Orlando, Florida">Orlando, Florida</option>
-              </select>
-          </form>
-        </section>
-      </section>
-      <section class="upcomingView hidden">
-        <section class="banner">
-          <h1>My Upcoming Trips</h1>
-        </section>
-        <section class="upcoming-trips">
-          <section class="trip-card-container">
-            <section class="big-trip-card" id="card">
-              <h3 maxlength="40">Destination</h3>
-              <section class="photo-container">
-                <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
-              </section>
-              <section class="trip-date-range">
-                <h4>10/10/20 - 10/24/20</h4>
-              </section>
-              <section class="trip-status">
-                <h4>upcoming</h4>
-              </section>
-            </section>
-          </section>
-          <section class="trip-card-container">
-            <section class="big-trip-card" id="card">
-              <h3 maxlength="40">Destination</h3>
-              <section class="photo-container">
-                <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" alt="trip" title="trip">
-              </section>
-              <section class="trip-date-range">
-                <h4>10/10/20 - 10/24/20</h4>
-              </section>
-              <section class="trip-status">
-                <h4>upcoming</h4>
-              </section>
-            </section>
-          </section>
-        </section>
-      </section>
-    </main>
   </section>
 </section>
 

@@ -3,13 +3,13 @@ const domUpdates = {
     const loginPage = document.querySelector('.loginPage')
     const dashboard = document.querySelector('.dashboard')
     const planTripView = document.querySelector('.planTripView')
-    const upcomingView = document.querySelector('.upcomingView')
-    this.hidePages([loginPage, dashboard, planTripView, upcomingView])
+    const tripCards = document.querySelector('.tripCardsView')
+    this.hidePages([loginPage, dashboard, planTripView, tripCards])
     if (displayPage === 'login') {
       loginPage.classList.remove('hidden')
     } else if (displayPage === 'dashboard') {
       dashboard.classList.remove('hidden')
-      upcomingView.classList.remove('hidden')
+      tripCards.classList.remove('hidden')
     } else if (displayPage === 'planTripView') {
       dashboard.classList.remove('hidden')
       planTripView.classList.remove('hidden')
