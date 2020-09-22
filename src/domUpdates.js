@@ -73,7 +73,6 @@ const domUpdates = {
     })
   },
   displayTripDetails(trip) {
-    console.log(trip);
     let tripDetailsPopup = document.querySelector(".trip-details");
     tripDetailsPopup.style.display = "inline";
     tripDetailsPopup.innerHTML = ''
@@ -102,6 +101,13 @@ const domUpdates = {
     tripDetailsPopup.style.display = "none";
     document.getElementById("overlay").remove();
   },
+  displayDestinationDropdown(destinationList) {
+    let dropdown = document.querySelector('.destination-input')
+    dropdown.innerHTML = ``
+    destinationList.forEach(destination => {
+      dropdown.innerHTML += `<option value="${destination}">${destination}</option>`
+    })
+  }
 }
 
 export default domUpdates;

@@ -97,12 +97,13 @@ function determineTrip(event) {
   }
 }
 function getDestinationsList() {
-  return destinationsData.reduce((list, destination) => {
+  let destinationList = destinationsData.reduce((list, destination) => {
     if(!list.includes(destination.destination)) {
       list.push(destination.destination)
     }
     return list
   }, [])
+  return destinationList.sort()
 }
 function displayBookingView() {
   let destinationList = getDestinationsList()
