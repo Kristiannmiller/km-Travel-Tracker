@@ -22,6 +22,10 @@ button {
   font-size: 15px;
 }
 
+form {
+  padding: 5px;
+}
+
 /*=== Main Sections ===*/
 
 body {
@@ -37,6 +41,11 @@ header {
   width: 100%;
   display: inline-grid;
   grid-template-rows: 25% 75%;
+}
+
+main {
+  display: grid;
+  font-family: 'calibri', sans-serif;
 }
 
 /*=== Login Page ===*/
@@ -59,16 +68,33 @@ header {
   padding-top: 40px;
 }
 
-/*=== Dashboard ===*/
+/*=== Header ===*/
 
 .currentLocation {
   display: inline-block;
 }
 
-
-h2{
-
+.logo {
+  height: 70px;
 }
+
+.greeting {
+  flex: none;
+  font-size: 40px;
+  color: #548687;
+  font-family: 'Rye', cursive;
+  padding: 12px;
+}
+
+.currentLocation {
+  flex: none;
+}
+
+.greetingWrap {
+  display: inline-flex;
+}
+
+/*=== Nav Bar ===*/
 
 ul {
   list-style-type: none;
@@ -94,57 +120,21 @@ li:hover {
   color: #548687
 }
 
-// li:active {
-//   background-color: #548687;
-//   font-color: #130702;
-// }
-
 .nav-bar {
   align-self: flex-end;
 }
 
-/*=== Header ===*/
-
-.logo {
-  height: 70px;
-}
-
-.greeting {
-  flex: none;
-  font-size: 40px;
-  color: #548687;
-  font-family: 'Rye', cursive;
-  padding: 12px;
-}
-
-.currentLocation {
-  flex: none;
-}
-
-.greetingWrap {
-  display: inline-flex;
-}
-aside {
-  grid-area: aside;
-}
-
-
-
-.dashboard .tripCards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-main {
-  display: grid;
-  font-family: 'calibri', sans-serif;
-}
+/*=== Cards View ===*/
 
 .banner {
   font-size: 30px;
   padding: 20px;
 }
-
-.big-trip-card {
+.dashboard .tripCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.tripCard {
   display: grid;
   border: 2px dashed #130702;
   background-color: white;
@@ -155,18 +145,16 @@ main {
   padding: 15px;
   width: 250px;
 }
-
 .dashboard .photo-preview {
   width: 90%;
-  // height: 100px;
 }
 
-.big-trip-card:hover .photo-preview {
+.tripCard:hover .photo-preview {
   opacity: 50%;
   transition: .8s ease;
 }
 
-.big-trip-card:hover .text {
+.tripCard:hover .text {
   font-size: 20px;
   opacity: 100%;
   transition: .5s ease;
@@ -182,6 +170,14 @@ main {
   width: 0%;
   transition: .5s ease;
 }
+
+
+/*=== Booking View ===*/
+
+
+
+/*=== Trip Details Popup ===*/
+
 .trip-details {
   background: white;
   border: 2px solid #130702;
@@ -203,6 +199,22 @@ main {
   margin: -73px;
 }
 
+#tripDetailsDest {
+  color: #130702;
+  font-size: 32px;
+  margin: 0;
+  height: 17%;
+}
+
+
+// li:active {
+//   background-color: #548687;
+//   font-color: #130702;
+// }
+// aside {
+//   grid-area: aside;
+// }
+
 // #overlay {
 //   filter:alpha(opacity=50);
 //   height:100%;
@@ -223,18 +235,7 @@ main {
 //   font-weight: 700;
 // }
 
-#exitTripDetails:hover {
-  background: #548687;
-  transition: .3s ease;
-}
-
-#tripDetailsDest {
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  color: #130702;
-  font-size: 32px;
-  margin: 0;
-  height: 17%;
-  // padding: 75px 0px 0px 0px;
-  // text-shadow: 0px 0px 6px black;
-}
+// #exitTripDetails:hover {
+//   background: #548687;
+//   transition: .3s ease;
+// }
