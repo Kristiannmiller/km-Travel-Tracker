@@ -14,7 +14,7 @@ html, body {
 }
 
 button {
-  color: #548687;
+  color: #130702;
   height: 30px;
   padding: 5px;
   margin: 5px;
@@ -146,21 +146,25 @@ li:hover {
   font-size: 30px;
   padding: 20px;
 }
+
 .dashboard .tripCards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 25px;
 }
+
 .tripCard {
   display: grid;
   border: 2px dashed #130702;
   background-color: white;
   border-radius: 7px;
   cursor: pointer;
-  height: 250px;
+  height: 260px;
   margin: 20px;
   padding: 15px;
   width: 250px;
 }
+
 .dashboard .photo-preview {
   width: 90%;
 }
