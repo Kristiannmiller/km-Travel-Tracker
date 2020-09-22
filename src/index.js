@@ -3,22 +3,34 @@ import './css/base.scss';
 import './css/styles.scss';
 import './images/placeholderVacayPhoto.jpg';
 import './images/Parchment-3.jpg';
+import './images/compassLogo.png';
 import Traveler from './traveler.js';
-import Trip from './trip.js';
 import domUpdates from './domUpdates.js';
 import moment from 'moment';
 import fetchRequests from './fetchRequests'
 
 
 // ************ QUERY SELECTORS *************** //
-let loginButton = document.querySelector('.login-button');
+const loginButton = document.querySelector('.login-button');
+const tripCardsSection = document.querySelector('.tripCards')
+const navAll = document.querySelector('.allNav')
+const navUpcoming = document.querySelector('.upcomingNav')
+const navPast = document.querySelector('.pastNav')
+const navPending = document.querySelector('.pendingNav')
+const navBook = document.querySelector('.bookNav')
+const exitTripDetails = document.querySelector('.trip-details')
 
 
 
 // ************ EVENT LISTENERS *************** //
 loginButton.addEventListener('click', determineValidID);
-
-
+navAll.addEventListener('click', displayMainDashboard);
+navUpcoming.addEventListener('click', displayUpcomingTripView);
+navPast.addEventListener('click', displayPastTripView);
+navPending.addEventListener('click', displayPendingTripView);
+tripCardsSection.addEventListener('click', determineTrip)
+exitTripDetails.addEventListener('click', exitTripDetailCard)
+navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
 let destinationsData
@@ -38,13 +50,28 @@ function determineValidID(event) {
   } else if (!passwordInput || passwordInput !== 'travel2020') {
     alert('please enter a valid password')
   } else {
-    displayDashboard(userID)
+    loadTravelerInfo(userID)
   }
 }
 
-function displayDashboard(userID) {
-  loadTravelerInfo(userID)
+function displayMainDashboard() {
   domUpdates.changePageDisplay('dashboard')
+  domUpdates.greetTraveler(currentTraveler)
+  domUpdates.displayCurrentLocation(currentTraveler)
+  domUpdates.displayTripCostTotal(currentTraveler, now.split('/')[0])
+  domUpdates.displayTrips(currentTraveler.allTrips, tripCardsSection, "My Trips")
+}
+function displayUpcomingTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.futureTrips, tripCardsSection, "My Upcoming Trips")
+}
+function displayPastTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.pastTrips, tripCardsSection, "My Past Trips")
+}
+function displayPendingTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.pendingTrips, tripCardsSection, "My Pending Trips")
 }
 function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
@@ -52,5 +79,19 @@ function loadTravelerInfo(userID) {
     destinationsData = data[1]
     currentTrips = data[2].filter(trip => trip.userID === currentTraveler.id)
     currentTraveler.determineTrips(currentTrips, now, destinationsData)
+    displayMainDashboard()
   })
+}
+function exitTripDetailCard(event) {
+  if (event.target === document.getElementById('exitTripDetails')) {
+    domUpdates.exitTripDetails()
+  }
+}
+function determineTrip(event) {
+  let trip = currentTraveler.allTrips.find(trip => {
+    return +event.target.id.split('-')[1] === trip.id
+  })
+  if (trip) {
+    domUpdates.displayTripDetails(trip)
+  }
 }

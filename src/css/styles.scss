@@ -1,4 +1,4 @@
-/*=== Reset ===*/
+/*=== Reset/Global ===*/
 
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -9,66 +9,114 @@ html, body {
   height: 100%
 }
 
-body {
-  background-image: url('../images/Parchment-3.jpg');
-  background-attachment: fixed;
-  display: grid;
-  font-family: 'calibri', sans-serif;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 50% 50%;
-  grid-template-areas:
-    "aside main"
-    "aside main"
-    "aside main";
-  height: 100vh;
-  margin: 20px;
-  padding: 0;
-}
-
-aside {
-  grid-area: aside;
-}
-
 .hidden {
   display: none;
 }
 
+/*=== Main Sections ===*/
+
+body {
+  background-image: url('../images/Parchment-3.jpg');
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  display: inline-grid;
+  grid-template-rows: 25% 75%;
+}
+
+.currentLocation{
+  display: inline-block;
+}
+// .locationWrap {
+//   display: inline-block;
+// }
+
+h2{
+
+}
+
+ul {
+  list-style-type: none;
+  background-color: #130702;
+  overflow: hidden;
+  height: 40px;
+  margin: 0;
+  padding: 2px;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  color: #F2EDE3;
+  padding: 14px 16px;
+  text-decoration: none;
+  vertical-align: sub;
+  cursor: pointer;
+  padding: 0vh 5vh 0vh 5vh;
+}
+
+li:hover {
+  color: #548687
+}
+
+li:active {
+  background-color: #548687;
+  font-color: #130702;
+}
+
+.nav-bar {
+  align-self: flex-end;
+}
+
+/*=== Header ===*/
+
+.logo {
+  height: 70px;
+}
+
+.greeting {
+  flex: none;
+  font-size: 40px;
+  color: #548687;
+  padding: 12px;
+}
+
+.currentLocation {
+  flex: none;
+}
+
+.greetingWrap {
+  display: inline-flex;
+}
+aside {
+  grid-area: aside;
+}
+
+
 .loginPage {
   width: 100%;
   text-align: center;
-  grid-column: 1 span 2;
-  grid-row: 2;
-}
-.side-bar {
+  margin-top: 40vh;
 }
 
-.side-bar .trip-card-container {
-  background-color: white;
-  border: 2px dashed #130702;
-  border-radius: 7px;
-  cursor: pointer;
-  height: 20%;
-  margin: 20px;
-  padding: 15px;
-  width: 250px;
-}
-.side-bar .photo-preview {
-  width: 50px;
-}
-
-.dashboard .upcoming-trips {
+.dashboard .tripCards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-
+  grid-template-columns: 1fr 1fr 1fr;
 }
 main {
-  grid-area: main;
-  display: flex;
-  justify-content: center;
-  align-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  font-family: 'calibri', sans-serif;
+}
+
+.banner {
+  font-size: 30px;
+  padding: 20px;
 }
 
 .big-trip-card {
@@ -85,6 +133,7 @@ main {
 
 .dashboard .photo-preview {
   width: 100%;
+  height: 100px;
 }
 
 .big-trip-card:hover .photo-preview {
@@ -92,9 +141,69 @@ main {
   transition: .8s ease;
 }
 
-// .big-trip-card:hover .text {
-//   font-size: 20px;
-//   opacity: 100%;
-//   transition: .5s ease;
-//   width: 100%;
-// }
+.big-trip-card:hover .text {
+  font-size: 20px;
+  opacity: 100%;
+  transition: .5s ease;
+  width: 100%;
+}
+.text {
+  font-weight: 700;
+  font-size: 0px;
+  opacity: 0%;
+  padding: 0%;
+  position: relative;
+  text-align: center;
+  width: 0%;
+  transition: .5s ease;
+}
+.trip-details {
+  background: white;
+  border: 2px solid #130702;
+  border-radius: 360px;
+  box-shadow: 1px 1px 115px black;
+  height: 500px;
+  width: 500px;
+  overflow-x: scroll;
+  padding: 1% 1% 1% 1%;
+  position: fixed;
+  right: 25%;
+  top: 15%;
+  z-index: 1000;
+}
+
+#overlay {
+  filter:alpha(opacity=50);
+  height:100%;
+  left:0;
+  opacity:0.5;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+}
+
+#exitTripDetails {
+  background: white;
+  border: 2px solid #130702;
+  border-radius: 5px;
+  color: #130702;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#exitTripDetails:hover {
+  background: #548687;
+  transition: .3s ease;
+}
+
+#tripDetailsDest {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 37px;
+  margin: 0;
+  height: 50%;
+  padding: 75px 0px 0px 0px;
+  text-shadow: 0px 0px 6px black;
+}
