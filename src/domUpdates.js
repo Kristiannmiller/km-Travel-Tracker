@@ -96,7 +96,7 @@ const domUpdates = {
   displayTripDetailsImage(trip) {
     document.getElementById("tripDetailsDest").style.backgroundImage = `url(${trip.image})`
   },
-  exitTripDetails(event) {
+  exitTripDetails() {
     let tripDetailsPopup = document.querySelector(".trip-details");
     tripDetailsPopup.style.display = "none";
     document.getElementById("overlay").remove();

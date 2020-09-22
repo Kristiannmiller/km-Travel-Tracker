@@ -5,7 +5,6 @@ import './images/placeholderVacayPhoto.jpg';
 import './images/Parchment-3.jpg';
 import './images/compassLogo.png';
 import Traveler from './traveler.js';
-import Trip from './trip.js';
 import domUpdates from './domUpdates.js';
 import moment from 'moment';
 import fetchRequests from './fetchRequests'
@@ -13,9 +12,6 @@ import fetchRequests from './fetchRequests'
 
 // ************ QUERY SELECTORS *************** //
 const loginButton = document.querySelector('.login-button');
-const loginPage = document.querySelector('.loginPage')
-const dashboard = document.querySelector('.dashboard')
-const planTripView = document.querySelector('.planTripView')
 const tripCardsSection = document.querySelector('.tripCards')
 const navAll = document.querySelector('.allNav')
 const navUpcoming = document.querySelector('.upcomingNav')
@@ -58,7 +54,7 @@ function determineValidID(event) {
   }
 }
 
-function displayMainDashboard(userID) {
+function displayMainDashboard() {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.greetTraveler(currentTraveler)
   domUpdates.displayCurrentLocation(currentTraveler)
@@ -83,7 +79,7 @@ function loadTravelerInfo(userID) {
     destinationsData = data[1]
     currentTrips = data[2].filter(trip => trip.userID === currentTraveler.id)
     currentTraveler.determineTrips(currentTrips, now, destinationsData)
-    displayMainDashboard(userID)
+    displayMainDashboard()
   })
 }
 function exitTripDetailCard(event) {

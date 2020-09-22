@@ -9,12 +9,10 @@ import Traveler from '../src/traveler.js';
 
 describe('Traveler', function() {
   let traveler1;
-  let traveler2;
   let traveler3;
 
   beforeEach(function() {
     traveler1 = new Traveler(travelersData.travelers[0])
-    traveler2 = new Traveler(travelersData.travelers[1])
     traveler3 = new Traveler(travelersData.travelers[2])
   })
   describe('functionality and properties', () => {

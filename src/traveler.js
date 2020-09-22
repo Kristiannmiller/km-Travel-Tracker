@@ -18,7 +18,7 @@ class Traveler {
     trips.forEach(trip => {
       let tripDestination
       allDestinations.forEach(destination => {
-        if(trip.destinationID === destination.id)
+        if (trip.destinationID === destination.id)
         tripDestination = destination
       })
       if (trip.userID === this.id) {
