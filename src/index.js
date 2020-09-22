@@ -29,7 +29,7 @@ const navBook = document.querySelector('.bookNav')
 loginButton.addEventListener('click', determineValidID);
 navAll.addEventListener('click', displayMainDashboard);
 navUpcoming.addEventListener('click', displayUpcomingTripView);
-navPast.addEventListener('click', displayUpcomingTripView); //displayPastTripView
+navPast.addEventListener('click', displayPastTripView);
 navPending.addEventListener('click', displayUpcomingTripView); //displayPendingTripView
 navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
 // ************ GLOBAL VARIABLES *************** //
@@ -64,6 +64,10 @@ function displayMainDashboard(userID) {
 function displayUpcomingTripView() {
   domUpdates.changePageDisplay('dashboard')
   domUpdates.displayTrips(currentTraveler.futureTrips, tripCardsSection, "My Upcoming Trips")
+}
+function displayPastTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.pastTrips, tripCardsSection, "My Past Trips")
 }
 
 function loadTravelerInfo(userID) {
