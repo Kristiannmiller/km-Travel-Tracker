@@ -17,13 +17,21 @@ const loginPage = document.querySelector('.loginPage')
 const dashboard = document.querySelector('.dashboard')
 const planTripView = document.querySelector('.planTripView')
 const tripCardsSection = document.querySelector('.tripCards')
+const navAll = document.querySelector('.allNav')
+const navUpcoming = document.querySelector('.upcomingNav')
+const navPast = document.querySelector('.pastNav')
+const navPending = document.querySelector('.pendingNav')
+const navBook = document.querySelector('.bookNav')
 
 
 
 // ************ EVENT LISTENERS *************** //
 loginButton.addEventListener('click', determineValidID);
-
-
+navAll.addEventListener('click', displayMainDashboard);
+navUpcoming.addEventListener('click', displayUpcomingTripView);
+navPast.addEventListener('click', displayUpcomingTripView); //displayPastTripView
+navPending.addEventListener('click', displayUpcomingTripView); //displayPendingTripView
+navBook.addEventListener('click', displayUpcomingTripView); //displayBookingView
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
 let destinationsData
@@ -52,6 +60,10 @@ function displayMainDashboard(userID) {
   domUpdates.greetTraveler(currentTraveler)
   domUpdates.displayCurrentLocation(currentTraveler)
   domUpdates.displayTrips(currentTraveler.allTrips, tripCardsSection, "My Trips")
+}
+function displayUpcomingTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.futureTrips, tripCardsSection, "My Upcoming Trips")
 }
 
 function loadTravelerInfo(userID) {

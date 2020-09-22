@@ -44,6 +44,7 @@ const domUpdates = {
     }
   },
   displayTripCards(trips, tripCardsSection) {
+    tripCardsSection.innerHTML = ``
     trips.forEach(trip => {
       let range = trip.dateRange()
       let startDate = moment(new Date(range[0])).format('MM/DD/YYYY')
