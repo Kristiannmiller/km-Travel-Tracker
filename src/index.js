@@ -8,21 +8,19 @@ import Traveler from './traveler.js';
 import Trip from './trip.js';
 import domUpdates from './domUpdates.js';
 import moment from 'moment';
-import fetchRequests from './fetchRequests'
-
+import fetchRequests from './fetchRequests';
 
 // ************ QUERY SELECTORS *************** //
 const loginButton = document.querySelector('.login-button');
-const tripCardsSection = document.querySelector('.tripCards')
-const navAll = document.querySelector('.allNav')
-const navUpcoming = document.querySelector('.upcomingNav')
-const navPast = document.querySelector('.pastNav')
-const navPending = document.querySelector('.pendingNav')
-const navBook = document.querySelector('.bookNav')
-const exitTripDetails = document.querySelector('.trip-details')
-const submitTripButton = document.querySelector('.submitTripButton')
-const bookTripButton = document.querySelector('#bookTripButton')
-
+const tripCardsSection = document.querySelector('.tripCards');
+const navAll = document.querySelector('.allNav');
+const navUpcoming = document.querySelector('.upcomingNav');
+const navPast = document.querySelector('.pastNav');
+const navPending = document.querySelector('.pendingNav');
+const navBook = document.querySelector('.bookNav');
+const exitTripDetails = document.querySelector('.trip-details');
+const submitTripButton = document.querySelector('.submitTripButton');
+const bookTripButton = document.querySelector('#bookTripButton');
 
 // ************ EVENT LISTENERS *************** //
 loginButton.addEventListener('click', determineValidID);
@@ -30,12 +28,13 @@ navAll.addEventListener('click', displayMainDashboard);
 navUpcoming.addEventListener('click', displayUpcomingTripView);
 navPast.addEventListener('click', displayPastTripView);
 navPending.addEventListener('click', displayPendingTripView);
-tripCardsSection.addEventListener('click', determineTrip)
-exitTripDetails.addEventListener('click', exitTripDetailCard)
+tripCardsSection.addEventListener('click', determineTrip);
+exitTripDetails.addEventListener('click', exitTripDetailCard);
 navBook.addEventListener('click', displayBookingView);
 tripCardsSection.addEventListener('click', determineTrip);
-submitTripButton.addEventListener('click', displayNewTrip)
-bookTripButton.addEventListener('click', saveTripData)
+submitTripButton.addEventListener('click', displayNewTrip);
+bookTripButton.addEventListener('click', saveTripData);
+
 // ************ GLOBAL VARIABLES *************** //
 let currentTraveler
 let destinationsData
@@ -60,25 +59,6 @@ function determineValidID(event) {
   }
 }
 
-function displayMainDashboard() {
-  domUpdates.changePageDisplay('dashboard')
-  domUpdates.greetTraveler(currentTraveler)
-  domUpdates.displayCurrentLocation(currentTraveler)
-  domUpdates.displayTripCostTotal(currentTraveler, now.split('/')[0])
-  domUpdates.displayTrips(currentTraveler.allTrips, tripCardsSection, "My Trips")
-}
-function displayUpcomingTripView() {
-  domUpdates.changePageDisplay('dashboard')
-  domUpdates.displayTrips(currentTraveler.futureTrips, tripCardsSection, "My Upcoming Trips")
-}
-function displayPastTripView() {
-  domUpdates.changePageDisplay('dashboard')
-  domUpdates.displayTrips(currentTraveler.pastTrips, tripCardsSection, "My Past Trips")
-}
-function displayPendingTripView() {
-  domUpdates.changePageDisplay('dashboard')
-  domUpdates.displayTrips(currentTraveler.pendingTrips, tripCardsSection, "My Pending Trips")
-}
 function loadTravelerInfo(userID) {
   fetchRequests.checkData(userID).then(data => {
     currentTraveler = new Traveler(data[0])
@@ -88,6 +68,30 @@ function loadTravelerInfo(userID) {
     displayMainDashboard()
   })
 }
+
+function displayMainDashboard() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.greetTraveler(currentTraveler)
+  domUpdates.displayCurrentLocation(currentTraveler)
+  domUpdates.displayTripCostTotal(currentTraveler, now.split('/')[0])
+  domUpdates.displayTrips(currentTraveler.allTrips, tripCardsSection, "My Trips")
+}
+
+function displayUpcomingTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.futureTrips, tripCardsSection, "My Upcoming Trips")
+}
+
+function displayPastTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.pastTrips, tripCardsSection, "My Past Trips")
+}
+
+function displayPendingTripView() {
+  domUpdates.changePageDisplay('dashboard')
+  domUpdates.displayTrips(currentTraveler.pendingTrips, tripCardsSection, "My Pending Trips")
+}
+
 function exitTripDetailCard(event) {
   if (event.target === document.querySelector('#bookTripButton')) {
     saveTripData()
@@ -130,7 +134,6 @@ function displayNewTrip(event) {
   domUpdates.displayTripDetails(trip, true)
 }
 function buildNewTrip(travelerCount, startDate, duration, destination) {
-  // let newTrip = {}
   newTrip.id = Date.now()
   newTrip.userID = currentTraveler.id
   newTrip.destinationID = findDestination(destination).id

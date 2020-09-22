@@ -65,10 +65,10 @@ li:hover {
   color: #548687
 }
 
-li:active {
-  background-color: #548687;
-  font-color: #130702;
-}
+// li:active {
+//   background-color: #548687;
+//   font-color: #130702;
+// }
 
 .nav-bar {
   align-self: flex-end;
@@ -132,8 +132,8 @@ main {
 }
 
 .dashboard .photo-preview {
-  width: 100%;
-  height: 100px;
+  width: 90%;
+  // height: 100px;
 }
 
 .big-trip-card:hover .photo-preview {
@@ -171,26 +171,32 @@ main {
   top: 15%;
   z-index: 1000;
 }
-
-#overlay {
-  filter:alpha(opacity=50);
-  height:100%;
-  left:0;
-  opacity:0.5;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
+.detailPhoto {
+  z-index: 1000;
+  opacity: .30;
+  height: 81%;
+  margin: -73px;
 }
 
-#exitTripDetails {
-  background: white;
-  border: 2px solid #130702;
-  border-radius: 5px;
-  color: #130702;
-  cursor: pointer;
-  font-weight: 700;
-}
+// #overlay {
+//   filter:alpha(opacity=50);
+//   height:100%;
+//   left:0;
+//   opacity:0.5;
+//   position:fixed;
+//   top:0;
+//   width:100%;
+//   z-index:100;
+// }
+
+// #exitTripDetails {
+//   background: white;
+//   border: 2px solid #130702;
+//   border-radius: 5px;
+//   color: #130702;
+//   cursor: pointer;
+//   font-weight: 700;
+// }
 
 #exitTripDetails:hover {
   background: #548687;
@@ -198,12 +204,12 @@ main {
 }
 
 #tripDetailsDest {
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  font-size: 37px;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  color: #130702;
+  font-size: 32px;
   margin: 0;
-  height: 50%;
-  padding: 75px 0px 0px 0px;
-  text-shadow: 0px 0px 6px black;
+  height: 17%;
+  // padding: 75px 0px 0px 0px;
+  // text-shadow: 0px 0px 6px black;
 }
