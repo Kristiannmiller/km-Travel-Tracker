@@ -17,9 +17,10 @@ class Traveler {
   determineTrips(trips, currentDate, allDestinations) {
     trips.forEach(trip => {
       let tripDestination
-      allDestinations.forEach(destination => {
-        if (trip.destinationID === destination.id)
-        tripDestination = destination
+      allDestinations.find(destination => {
+        if (trip.destinationID === destination.id) {
+          tripDestination = destination
+        }
       })
       if (trip.userID === this.id) {
         this.allTrips.push(new Trip(trip, tripDestination))

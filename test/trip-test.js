@@ -11,12 +11,14 @@ describe('Trip', function() {
   let presentTrip;
   let futureTrip;
   let pendingTrip;
+  let brokenTrip
 
   beforeEach(function() {
     pastTrip = new Trip(tripsData.trips[0], destinationsData.destinations[0])
     futureTrip = new Trip(tripsData.trips[1], destinationsData.destinations[1])
     presentTrip = new Trip(tripsData.trips[2], destinationsData.destinations[2])
     pendingTrip = new Trip(tripsData.trips[3], destinationsData.destinations[0])
+    brokenTrip = new Trip(tripsData.trips[10], destinationsData.destinations[3])
   });
   describe('functionality and properties', () => {
     it('should be a function', () => {
@@ -32,6 +34,10 @@ describe('Trip', function() {
       expect(pastTrip.status).to.equal("approved")
       expect(pastTrip.suggestedActivities).to.deep.equal([])
     });
+    it('should default to placeholder data if data is missing or not provided', () => {
+      expect(brokenTrip.image).to.equal('../images/placeholderVacayPhoto.jpg')
+      expect(brokenTrip.alt).to.equal('image of a beautiful area of Sydney, Austrailia')
+    })
   })
   describe('dateRange', () => {
     it('should return an array of dates for duration of trip', () => {

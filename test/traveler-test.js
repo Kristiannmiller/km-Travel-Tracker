@@ -4,7 +4,6 @@ const expect = chai.expect;
 import destinationsData from './datasets/destinations-data.js';
 import travelersData from './datasets/travelers-data.js';
 import tripsData from './datasets/trips-data.js';
-import Trip from '../src/trip.js';
 import Traveler from '../src/traveler.js';
 
 describe('Traveler', function() {

@@ -99,6 +99,16 @@ let tripsData = {
       "duration": 16,
       "status": "pending",
       "suggestedActivities": []
+    },
+    {
+      "id": 7,
+      "userID": 7,
+      "destinationID": 5,
+      "travelers": 6,
+      "date": "2020/04/06",
+      "duration": 16,
+      "status": "pending",
+      "suggestedActivities": []
     }
   ]
 }

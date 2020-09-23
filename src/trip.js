@@ -12,7 +12,7 @@ class Trip {
     this.suggestedActivities = tripData.suggestedActivities
     this.destinationData = destinationData
     this.image = destinationData.image || '../images/placeholderVacayPhoto.jpg'
-    this.alt = destinationData.alt || 'image of sunset above clouds while peering out of the window of an airplane'
+    this.alt = destinationData.alt || `image of a beautiful area of ${this.destinationData.destination}`
   }
 
   dateRange() {

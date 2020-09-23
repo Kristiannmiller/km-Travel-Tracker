@@ -37,10 +37,11 @@ const domUpdates = {
   },
   displayTripCardsBanner(trips, tripCardsSection, bannerMessage) {
     let banner = document.querySelector('.banner')
-    if (trips === []) {
+    if (trips.length === 0) {
+      tripCardsSection.innerHTML = ``
       banner.innerHTML =
-      `<h1>No Trips to See Here!</h1>
-        <h2>Click "Book a Trip" to start planning your next adventure</h2>`
+      `<h2>No Trips to See Here!</h2>
+        <h1>Click "Book a Trip" to start planning your next adventure</h1>`
     } else {
       banner.innerHTML =
       `<h1>${bannerMessage}</h1>`
@@ -71,35 +72,40 @@ const domUpdates = {
       </section>`
     })
   },
-  displayTripDetails(trip) {
-    console.log(trip);
+  displayTripDetails(trip, isNew) {
     let tripDetailsPopup = document.querySelector(".trip-details");
     tripDetailsPopup.style.display = "inline";
     tripDetailsPopup.innerHTML = ''
-    this.displayTripDetailsHeader(trip, tripDetailsPopup)
-    this.displayTripDetailsImage(trip)
-    tripDetailsPopup.insertAdjacentHTML("beforebegin", "<section id='overlay'></div>");
+    this.displayTripDetailsHeader(trip, tripDetailsPopup, isNew)
+    tripDetailsPopup.insertAdjacentHTML("beforebegin", "<section id='overlay'></section>");
   },
-  displayTripDetailsHeader(trip, tripDetailsPopup) {
+  displayTripDetailsHeader(trip, tripDetailsPopup, isNew) {
     let range = trip.dateRange()
     let startDate = moment(new Date(range[0])).format('MM/DD/YYYY')
     let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
-    tripDetailsPopup.innerHTML = ``
-    tripDetailsPopup.innerHTML =
-    `<button id="exitTripDetails" class="exitTripDetails">X</button>
-      <h3 id="tripDetailsDest">${trip.destinationData.destination}</h3>
+    tripDetailsPopup.innerHTML = `<img src="${trip.image}" class="detailPhoto" id="trip-${trip.id}" alt="${trip.alt}" title="trip">`
+    tripDetailsPopup.innerHTML +=
+    `<h3 id="tripDetailsDest">${trip.destinationData.destination}</h3>
       <h4>Dates : ${startDate} - ${endDate} (${trip.duration} days)</h4>
       <h4>Total Travelers : ${trip.totalTravelers}</h4>
       <h4>Estimated Cost : $${trip.determineTripCost()}</h4>
       <h4>Status : ${trip.status}</h4>`
-  },
-  displayTripDetailsImage(trip) {
-    document.getElementById("tripDetailsDest").style.backgroundImage = `url(${trip.image})`
+    if (isNew) {
+      tripDetailsPopup.innerHTML +=
+        `<button id="bookTripButton" class="bookTrip">Book This Trip</button>`
+    }
   },
   exitTripDetails() {
     let tripDetailsPopup = document.querySelector(".trip-details");
     tripDetailsPopup.style.display = "none";
     document.getElementById("overlay").remove();
+  },
+  displayDestinationDropdown(destinationList) {
+    let dropdown = document.querySelector('.destination-input')
+    dropdown.innerHTML = ``
+    destinationList.forEach(destination => {
+      dropdown.innerHTML += `<option value="${destination}">${destination}</option>`
+    })
   }
 }
 

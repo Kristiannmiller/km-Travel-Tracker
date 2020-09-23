@@ -1,4 +1,4 @@
-
+// ************************** ADD GIF ***************************//
 <br />
 <p align="center">
   <a href="https://github.com/Kristiannmiller/km-Travel-Tracker">
@@ -40,6 +40,7 @@ In your terminal:
 
 4. Visit `http://localhost:8080/` in your browser
 
+// ************************** ADD IMAGES ***************************//
 ## Usage
 #### LOG-IN VIEW
 <img src="src/images/RTWCAppMainPage.png" alt="Ahoy! app log-in view" width="600">
@@ -59,6 +60,7 @@ In your terminal:
 #### MOBILE TRIP PLANNER VIEW
 <img src="src/images/RTWCAppPantryModPopup.png" alt="Ahoy! app mobile trip planner view" width="600">
 
+// ************************** ADD INFO ***************************//
 ## Roadmap
 
 The total time allotted for this project was approximately 8 days. Future features contemplated by the developer include the following:
@@ -76,7 +78,7 @@ See the [open issues](https://github.com/Kristiannmiller/km-Travel-Tracker/issue
 
 [Nicole Gooden - Student Advisor](https://github.com/nicolegooden)
 
-[Travis Rollins - Project Manager](https://github.com/Kalikoze)
+[Robert Gu - Project Manager](https://github.com/BobGu)
 
 Project Link: [AHOY! / Travel-Tracker](https://github.com/Kristiannmiller/km-Travel-Tracker)
 
