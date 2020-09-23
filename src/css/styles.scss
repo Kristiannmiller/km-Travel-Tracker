@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
 /*=== Reset/Global ===*/
 
 html, body, h1, h2, h3, h4, h5, h6, p {
@@ -14,11 +17,11 @@ html, body {
 }
 
 button {
-  color: #130702;
+  color: $black-border-color;
   height: 30px;
   padding: 5px;
   margin: 5px;
-  font-family: 'Arial';
+  font-family: $default-font-family;
   font-size: 15px;
 }
 
@@ -45,7 +48,7 @@ header {
 
 main {
   display: grid;
-  font-family: 'calibri', sans-serif;
+  font-family: $default-font-family
 }
 
 /*=== Login Page ===*/
@@ -53,8 +56,8 @@ main {
 #loginTitle {
   font-size: 15px;
   font-size: 40px;
-  color: #548687;
-  font-family: 'Rye', cursive;
+  color: $blue-highlight-color;
+  font-family: $headline-font-family
 }
 
 .login-logo-img {
@@ -84,8 +87,8 @@ main {
   height: fit-content;
   flex: none;
   font-size: 40px;
-  color: #548687;
-  font-family: 'Rye', cursive;
+  color: $blue-highlight-color;
+  font-family: $headline-font-family;
   padding: 31px 15px 12px 15px;
 }
 
@@ -113,7 +116,7 @@ main {
 
 ul {
   list-style-type: none;
-  background-color: #130702;
+  background-color: $black-border-color;
   overflow: hidden;
   height: 40px;
   margin: 0;
@@ -124,7 +127,7 @@ ul {
 
 li {
   display: inline;
-  color: #F2EDE3;
+  color: $tan-font-color;
   padding: 14px 16px;
   text-decoration: none;
   vertical-align: sub;
@@ -133,7 +136,7 @@ li {
 }
 
 li:hover {
-  color: #548687
+  color: $blue-highlight-color;
 }
 
 .nav-bar {
@@ -155,8 +158,8 @@ li:hover {
 
 .tripCard {
   display: grid;
-  border: 2px dashed #130702;
-  background-color: white;
+  border: 2px dashed $black-border-color;
+  background-color: $off-white-background-color;
   border-radius: 7px;
   cursor: pointer;
   height: 260px;
@@ -199,8 +202,8 @@ li:hover {
 /*=== Trip Details Popup ===*/
 
 .trip-details {
-  background: white;
-  border: 2px solid #130702;
+  background: $off-white-background-color;
+  border: 2px solid $black-border-color;
   border-radius: 360px;
   box-shadow: 1px 1px 115px black;
   height: 500px;
@@ -220,42 +223,8 @@ li:hover {
 }
 
 #tripDetailsDest {
-  color: #130702;
+  color: $black-border-color;
   font-size: 32px;
   margin: 0;
   height: 17%;
 }
-
-
-// li:active {
-//   background-color: #548687;
-//   font-color: #130702;
-// }
-// aside {
-//   grid-area: aside;
-// }
-
-// #overlay {
-//   filter:alpha(opacity=50);
-//   height:100%;
-//   left:0;
-//   opacity:0.5;
-//   position:fixed;
-//   top:0;
-//   width:100%;
-//   z-index:100;
-// }
-
-// #exitTripDetails {
-//   background: white;
-//   border: 2px solid #130702;
-//   border-radius: 5px;
-//   color: #130702;
-//   cursor: pointer;
-//   font-weight: 700;
-// }
-
-// #exitTripDetails:hover {
-//   background: #548687;
-//   transition: .3s ease;
-// }
