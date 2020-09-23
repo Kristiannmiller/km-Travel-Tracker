@@ -1,0 +1,5 @@
+@mixin pirateFont($font-size) {
+  color: $blue-highlight-color;
+  font-family: $headline-font-family;
+  font-size: $font-size;
+};

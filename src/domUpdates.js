@@ -56,7 +56,7 @@ const domUpdates = {
       let endDate = moment(new Date(range[range.length - 1])).format('MM/DD/YYYY')
       tripCardsSection.innerHTML +=
       `<section class="trip-card-container">
-          <section class="big-trip-card">
+          <section class="tripCard">
             <h3 maxlength="40">${trip.destinationData.destination}</h3>
             <section class="photo-container">
               <img src="${trip.image}" class="photo-preview" id="trip-${trip.id}" alt="${trip.alt}" title="trip">

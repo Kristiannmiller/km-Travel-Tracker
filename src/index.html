@@ -3,37 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>AHOY! Travel-Tracker</title>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point:400,700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
   </head>
   <body>
     <section class="loginPage">
-      <h1><span>AHOY!</span><img src="" alt="" class="logo-img"></h1>
+      <img src="../images/compassLogo.png" alt="company logo of an elegant pirate ship styled like an old map" class="login-logo-img">
+      <h1><span id="loginTitle">AHOY!</span>
+      </h1>
       <h2>sign in to let the adventure begin</h2>
-      <form role="username-input">
-        <label class="username-label" for="username-input">username</label>
+      <form id="username">
+        <label for="username-input" class="username-label">username</label>
         <input id="username-input" type="text" maxlength="11" autocomplete="off" placeholder="username">
       </form>
-      <form role="password-input">
-        <label class="password-label" for="password-input">password</label>
+      <form id="password">
+        <label for="password-input" class="password-label">password</label>
         <input id="password-input" type="text" maxlength="11" autocomplete="off" placeholder="password">
       </form>
       <button class="login-button" type="button" name="button">Let's Go</button>
     </section>
     <section class="dashboard hidden">
       <header>
-        <section>
-          <section class="greetingWrap">
+        <section class="greetingWrap">
             <img class="logo" src="./images/compassLogo.png" alt="compass logo">
-            <h1 class="greeting"></h1>
-          </section>
+            <h1 class="greeting">AHOY, Kristi!</h1>
           <section class="locationWrap">
-            <h4>Current Location:</h4>
-            <h3 class="currentLocation"></h3>
+            <h3>Current Location:</h3>
+            <h4 class="currentLocation">Denver, CO</h4>
           </section>
           <section class="totalCost">
-            <h4>Total Cost of Trips This Year:</h4>
-            <h3 class="total"></h3>
+            <h3>Total Cost of Trips This Year:</h3>
+            <h4 class="total">$10458</h4>
           </section>
         </section>
         <nav class="nav-bar">
@@ -48,34 +47,130 @@
       </header>
       <main class="main">
         <section class="trip-details hidden">
+          <img src="../images/placeholderVacayPhoto.jpg" class="detailPhoto" id="trip-22" alt="stuff here" title="trip">
+          <h3 id="tripDetailsDest">Miami, Florida</h3>
+            <h4>Dates : 09/22/2020 - 09/30/2020 (8 days)</h4>
+            <h4>Total Travelers : 5</h4>
+            <h4>Estimated Cost : $500</h4>
+            <h4>Status : pending</h4>
           <button id="bookTripButton" class="bookTrip">Book This Trip</button>
         </section>
         <section class="tripCardsView hidden">
           <section class="banner">
-            <h1></h1>
+            <h2>My Trips</h2>
           </section>
           <section class="tripCards">
+            <section class="trip-card-container">
+                <section class="tripCard">
+                  <h3 maxlength="40">Miami Florida</h3>
+                  <section class="photo-container">
+                    <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" id="trip-22" alt="image information here" title="trip">
+                    <div class="text">Take Me Away</div>
+                  </section>
+                  <section class="trip-date-range">
+                    <h4>09/27/2020 - 12/21/2020</h4>
+                  </section>
+                  <section class="trip-status">
+                    <h4>approved</h4>
+                  </section>
+                </section>
+            </section>
+            <section class="trip-card-container">
+                <section class="tripCard">
+                  <h3 maxlength="40">Miami Florida</h3>
+                  <section class="photo-container">
+                    <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" id="trip-22" alt="image information here" title="trip">
+                    <div class="text">Take Me Away</div>
+                  </section>
+                  <section class="trip-date-range">
+                    <h4>09/27/2020 - 12/21/2020</h4>
+                  </section>
+                  <section class="trip-status">
+                    <h4>approved</h4>
+                  </section>
+                </section>
+            </section>
+            <section class="trip-card-container">
+                <section class="tripCard">
+                  <h3 maxlength="40">Miami Florida</h3>
+                  <section class="photo-container">
+                    <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" id="trip-22" alt="image information here" title="trip">
+                    <div class="text">Take Me Away</div>
+                  </section>
+                  <section class="trip-date-range">
+                    <h4>09/27/2020 - 12/21/2020</h4>
+                  </section>
+                  <section class="trip-status">
+                    <h4>approved</h4>
+                  </section>
+                </section>
+            </section>
+            <section class="trip-card-container">
+                <section class="tripCard">
+                  <h3 maxlength="40">Miami Florida</h3>
+                  <section class="photo-container">
+                    <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" id="trip-22" alt="image information here" title="trip">
+                    <div class="text">Take Me Away</div>
+                  </section>
+                  <section class="trip-date-range">
+                    <h4>09/27/2020 - 12/21/2020</h4>
+                  </section>
+                  <section class="trip-status">
+                    <h4>approved</h4>
+                  </section>
+                </section>
+            </section>
+            <section class="trip-card-container">
+                <section class="tripCard">
+                  <h3 maxlength="40">Miami Florida</h3>
+                  <section class="photo-container">
+                    <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" id="trip-22" alt="image information here" title="trip">
+                    <div class="text">Take Me Away</div>
+                  </section>
+                  <section class="trip-date-range">
+                    <h4>09/27/2020 - 12/21/2020</h4>
+                  </section>
+                  <section class="trip-status">
+                    <h4>approved</h4>
+                  </section>
+                </section>
+            </section>
+            <section class="trip-card-container">
+                <section class="tripCard">
+                  <h3 maxlength="40">Miami Florida</h3>
+                  <section class="photo-container">
+                    <img src="../images/placeholderVacayPhoto.jpg" class="photo-preview" id="trip-22" alt="image information here" title="trip">
+                    <div class="text">Take Me Away</div>
+                  </section>
+                  <section class="trip-date-range">
+                    <h4>09/27/2020 - 12/21/2020</h4>
+                  </section>
+                  <section class="trip-status">
+                    <h4>approved</h4>
+                  </section>
+                </section>
+            </section>
           </section>
         </section>
         <section class="planTripView hidden">
           <section class="banner">
-            <h1>Plan Your Trip</h1>
+            <h2>Plan Your Trip</h2>
           </section>
           <section>
-            <form action="departure-datepicker">
-              <label for="depart-date">Select Departure Date:</label>
+            <form id="datePicker">
+              <label for="daySelector">Select Departure Date:</label>
               <input class="depart-date" id="daySelector" type="date" min="2020-10-01" max="2025-10-01"/>
             </form>
-            <form action="trip-duration">
-              <label for="trip-duration">Trip Duration (days)</label>
+            <form id="durationNumber">
+              <label for="tripDuration">Trip Duration (days)</label>
               <input class="trip-duration" min="1" id="tripDuration" type="number">
             </form>
-            <form action="travelers-amount">
-              <label for="travelers-amount">Number of Travelers</label>
+            <form id="travelerAmount">
+              <label for="travelersAmount">Number of Travelers</label>
               <input class="travelers-amount" min="1" id="travelersAmount" type="number">
             </form>
-            <form action="destination-input">
-              <label for="destination-input">Destination</label>
+            <form id="destination">
+              <label for="destinationInput">Destination</label>
               <select class="destination-input" id="destinationInput" type="number">
               </select>
             </form>
