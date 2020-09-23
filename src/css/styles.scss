@@ -221,3 +221,70 @@ li:hover {
   margin: 0;
   height: 17%;
 }
+
+@media screen and (max-width: 1660px) {
+  .dashboard .tripCards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1434px) {
+  li {
+    padding: 0vh 4vh;
+    font-size: 17px;
+  }
+  .dashboard .tripCards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1022px) {
+  ul {
+    display: inline-flex;
+  }
+  .banner {
+    padding-bottom: 0px;
+  }
+  .totalCost {
+    padding: 20px;
+    font-size: 12px;
+  }
+  .locationWrap {
+    padding: 20px;
+    font-size: 12px;
+  }
+  .dashboard .tripCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 725px) {
+  .dashboard .tripCards {
+    grid-template-columns: 1fr;
+    text-align: -webkit-center;
+    padding-top: 25%;
+  }
+  .nav-bar {
+    align-self: flex-end;
+    width: 50px;
+  }
+  ul {
+    height: 100px;
+    flex-direction: column-reverse;
+    position: absolute;
+    width: max-content;
+    flex-flow: column;
+    padding: 8px;
+    postion: static;
+  }
+  li {
+    width: max-content;
+    padding: 0px;
+  }
+  .totalCost {
+    display: none;
+  }
+  .locationWrap {
+    display: none;
+  }
+  .banner {
+    display: none;
+  }
+}
