@@ -1,8 +1,7 @@
-// ************************** ADD GIF ***************************//
 <br />
 <p align="center">
   <a href="https://github.com/Kristiannmiller/km-Travel-Tracker">
-    <img src="src/images/RTWCAppJourney.gif" alt="moving image of application in use" width="600">
+    <img src="src/images/TTAppTour.gif" alt="moving image of application in use" width="600">
   </a>
 
   <h3 align="center">AHOY!</h3>
@@ -40,35 +39,22 @@ In your terminal:
 
 4. Visit `http://localhost:8080/` in your browser
 
-// ************************** ADD IMAGES ***************************//
 ## Usage
 #### LOG-IN VIEW
-<img src="src/images/RTWCAppMainPage.png" alt="Ahoy! app log-in view" width="600">
+<img src="src/images/TTLoginView.png" alt="Ahoy! app log-in view" width="600">
 
 #### DASHBOARD VIEW
-<img src="src/images/RTWCAppRecipeInstructions.png" alt="Ahoy! app dashboard view" width="600">
+<img src="src/images/TTTripsView.png" alt="Ahoy! app dashboard view" width="600">
 
 #### TRIP-PLANNER VIEW
-<img src="src/images/RTWCAppRecipeTypeSort.png" alt="Ahoy! app trip-planner view" width="600">
-
-#### MOBILE DASHBOARD VIEW
-<img src="src/images/RTWCAppRecipeSearch.png" alt="Ahoy! app mobile dashboard view" width="600">
-
-#### MOBILE TRIP VIEW
-<img src="src/images/RTWCAppMyRecipesView.png" alt="Ahoy! app mobile trip view" width="600">
-
-#### MOBILE TRIP PLANNER VIEW
-<img src="src/images/RTWCAppPantryModPopup.png" alt="Ahoy! app mobile trip planner view" width="600">
-
-// ************************** ADD INFO ***************************//
+<img src="src/images/TTPlanYourTrip.png" alt="Ahoy! app trip-planner view" width="600">
 ## Roadmap
 
 The total time allotted for this project was approximately 8 days. Future features contemplated by the developer include the following:
 
-* SOMETHING I'D LIKE TO ADD TO THE PROJECT
-* SOMETHING I'D LIKE TO ADD TO THE PROJECT
-* SOMETHING I'D LIKE TO ADD TO THE PROJECT
-* SOMETHING I'D LIKE TO ADD TO THE PROJECT
+* Add a feature where users can leave comments on certain trips, or upload their own photos
+* Add agency side
+* Be able to delete/edit a trip
 
 See the [open issues](https://github.com/Kristiannmiller/km-Travel-Tracker/issues) for a list of proposed features (and known issues).
 

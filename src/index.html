@@ -6,11 +6,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section class="loginPage hidden">
+    <section class="loginPage">
       <img src="../images/compassLogo.png" alt="company logo of an elegant pirate ship styled like an old map" class="login-logo-img">
       <h1><span id="loginTitle">AHOY!</span>
       </h1>
-      <h2 class="slogan">sign in to let the adventure begin</h2>
+      <h2>sign in to let the adventure begin</h2>
       <form id="username">
         <label for="username-input" class="username-label">username</label>
         <input id="username-input" type="text" maxlength="11" autocomplete="off" placeholder="username">
@@ -21,7 +21,7 @@
       </form>
       <button class="login-button" type="button" name="button">Let's Go</button>
     </section>
-    <section class="dashboard">
+    <section class="dashboard hidden">
       <header>
         <section class="greetingWrap">
             <img class="logo" src="./images/compassLogo.png" alt="compass logo">
@@ -55,7 +55,7 @@
             <h4>Status : pending</h4>
           <button id="bookTripButton" class="bookTrip">Book This Trip</button>
         </section>
-        <section class="tripCardsView">
+        <section class="tripCardsView hidden">
           <section class="banner">
             <h2>My Trips</h2>
           </section>
