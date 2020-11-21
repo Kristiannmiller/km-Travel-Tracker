@@ -39,6 +39,9 @@ In your terminal:
 
 4. Visit `http://localhost:8080/` in your browser
 
+## Where it began
+<img src="src/images/wireframe.png" alt="early wireframe design of portfolio site" width="600">
+
 ## Usage
 #### LOG-IN VIEW
 <img src="src/images/TTLoginView.png" alt="Ahoy! app log-in view" width="600">
