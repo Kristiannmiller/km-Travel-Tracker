@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
+    publicPath: "/webpack-demo/",
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.bundle.js'
   },
@@ -28,7 +29,14 @@ module.exports = {
                 }
               }
             ]
-      }
+      },
+      {
+        test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader'
+              }
+            }
     ],
   },
   // Below is needed for webpack-dev-server
