@@ -1,5 +1,5 @@
 {
-  "homepage": "http://kristiannmiller.github.io/km-Travel-Tracker",
+  "homepage": "http://kristiannmiller.github.io/km-Travel-Tracker/src",
   "name": "webpack-starter-kit",
   "version": "1.0.0",
   "description": "Project starter kit using webpack, mocha, chai, and SCSS/SASS enabled",
